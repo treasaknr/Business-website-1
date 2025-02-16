@@ -1,0 +1,796 @@
+=
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="apps.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title> String of Pearls-The complete storehouse of Indoorplants </title>
+</head>
+<body>
+   <header>
+      <nav>
+          <div class="nav-left">
+              <div class="nav-logo" width="160px" height="100px">
+                  <img src="img/logo1.png">
+              </div>
+              <div class="location">
+                  <p class="top-text">Deliver to</p>
+                  <div class="location-icon">
+                      <i class="fa-solid fa-location-dot"></i>
+                      <p class="bottom-text">India</p>
+                  </div>
+              </div>
+          </div>
+
+          <div class="nav-center">
+              <select class="search-dropdown">
+                  <option>All</option>
+                  <option>Low light plants</option>
+                  <option>Flowering plants</option>
+                  <option>Sacculants and cacti</option>
+                  <option>Herbs</option>
+                  <option>Foliage plants</option>
+                  <option>Climbing and tailoring plants</option>
+                  <option>Tropical plants</option>
+                  <option>Cacti</option>
+                  <option>Miniature plants</option>
+              </select>
+              <input type="text" placeholder="Search products from String of Pearls" class="search-box">
+              <div class="search-icon">
+                  <i class="fa-solid fa-magnifying-glass" style="color: #28416c;">
+                  </i>
+              </div>
+          </div>
+
+          <div class="nav-right">
+              <div class="language-option">
+                  <div class="flag">
+                      <i class="fa-solid fa-flag-checkered"></i>
+                  </div>
+                  <select class="select-language">
+                      <option value="lan">EN</option>
+                      <option value="lan">ES</option>
+                      <option value="lan">AR</option>
+                  </select>
+              </div>
+
+              <div class="account-option">
+                  <p class="top-text">
+                      Hello, sign in
+                  </p>
+                  <select class="select-account">
+                      <option value="Account">
+                          Account & Lists
+                      </option>
+                      <option value="Account">
+                          Account & Lists
+                      </option>
+                      <option value="Account">
+                          Account & Lists
+                      </option>
+                  </select>
+              </div>
+
+              <div class="order-option">
+                  <p class="top-text">
+                      Returns
+                  </p>
+                  <p class="bottom-text">
+                      & Orders
+                  </p>
+              </div>
+
+              <div class="cart-option">
+                  <div class="cart-logo">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                  </div>
+                  Cart
+              </div>
+          </div>
+      </nav>
+
+      <div class="nav-options">
+          <div class="all-logo">
+              <i class="fa-solid fa-bars"></i>
+              <p class="list">All</p>
+          </div>
+          <div class="options">
+              <a href="">
+                  <p>SHOP</p>
+              </a>
+              <a href="cart.html">
+                  <p>PRODUCT</p>
+              </a>
+              <a href="">
+                  <p>PAGES</p>
+              </a>
+              <a href="">
+                  <p>BLOG</p>
+              </a>
+          </div>
+      </div>
+      </header>
+ <style>
+      * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         font-family: 'Poppins', sans-serif;
+      }
+
+      body {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         flex-direction: column;
+         background-color: #f5f5f5;
+         min-height: 100vh;
+      }
+
+      .header {
+         height: 80px;
+         width: 70%;
+         background-color: #7ba19e;
+         border-radius: 3px;
+         margin: 30px 0;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         padding: 15px;
+      }
+
+      .header .logo {
+         font-size: 20px;
+         color: white;
+      }
+
+      .cart {
+         display: flex;
+         background-color: #365956;
+         justify-content: space-between;
+         align-items: center;
+         padding: 7px 10px;
+         border-radius: 3px;
+         width: 80px;
+      }
+
+      .fa-solid {
+         color: white;
+      }
+
+      .cart p {
+         height: 22px;
+         width: 22px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         border-radius: 50%;
+         background-color: #7ba19e;
+         color: white;
+      }
+
+      .container {
+         display: flex;
+         width: 70%;
+         margin-bottom: 30px;
+      }
+
+      #root {
+         width: 60%;
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         grid-gap: 10px;
+      }
+
+      .sidebar {
+         width: 40%;
+         border-radius: 5px;
+         margin-left: 5px;
+         padding: 10px;
+         text-align: center;
+      }
+
+      .head {
+         background-color: rgba(6, 119, 64, 0.4);
+         border-radius: 3px;
+         height: 40px;
+         padding: 10px;
+         margin-bottom: 20px;
+         color: white;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+
+      .foot {
+         display: flex;
+         justify-content: space-between;
+         margin: 20px 0;
+         padding: 10px 0;
+         border-top: 1px solid #333;
+      }
+
+      .box {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: space-between;
+         border: 1px solid rgba(6, 119, 64, 0.4);
+         border-radius: 5px;
+         padding: 5px;
+         background-color: white;
+      }
+
+      .img-box {
+         width: 100%;
+         height: 180px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+
+      .images {
+         max-width: 90%;
+         max-height: 90%;
+         object-fit: cover;
+         object-position: center;
+      }
+
+      .bottom {
+         text-align: center;
+         margin-top: 10px;
+      }
+
+      .cart-item {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         padding: 10px;
+         background-color: rgba(6, 119, 64, 0.4);
+         border-bottom: 1px solid #aaa;
+         border-radius: 3px;
+         margin: 5px 0;
+      }
+
+      .row-img {
+         width: 50px;
+         height: 50px;
+         border-radius: 50%;
+         border: 1px solid rgb(12, 127, 69);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+
+      .rowing {
+         max-width: 43px;
+         max-height: 43px;
+         border-radius: 50%;
+      }
+
+      .fa-trash:hover {
+         cursor: pointer;
+         color: #333;
+      }
+
+      button {
+         margin-top: 10px;
+         width: 100%;
+         border: none;
+         border-radius: 5px;
+         background-color: rgba(6, 119, 64, 0.4);
+         padding: 7px 25px;
+         color: white;
+         cursor: pointer;
+      }
+
+      button:hover {
+         background-color: rgb(54, 54, 54);
+      }
+      #scrollToTopBtn {
+               display: none;
+               position: fixed;
+               bottom: 5px;
+               right: px;
+               z-index: 99;
+               border: none;
+               outline: none;
+               background-color: #ffcc00;
+               color: white;
+               cursor: pointer;
+               padding: 15px;
+               border-radius: 20px;
+               font-size: 18px;
+
+          }
+
+          #scrollToTopBtn:hover {
+               background-color: #e6b800;
+          }
+
+   </style>
+</head>
+
+<body>
+   <div class="header" id="pro-cart">
+      <p class="logo">Logo</p>
+      <div class="cart">
+         <i class="fa fa-shopping-cart"></i>
+         <p id="count">0</p>
+      </div>
+   </div>
+   <div class="container">
+      <div id="root"></div>
+      <div class="sidebar">
+         <div class="head">
+            <p>My Cart</p>
+         </div>
+         <div id="cartItem">Your Cart is Empty.</div>
+         <div class="foot">
+            <h5>Total</h5>
+            <h3 id="total">$0.00</h3>
+         </div>
+         <button onclick="window.location.href='payment.html'">Proceed to Checkout</button>
+      </div>
+      <script>
+         const product = [
+
+            {
+               id: 0,
+               image: 'IP/1Lp/1.jpg',
+               title: 'ZZ Black Plant',
+               price: 260,
+            },
+            {
+               id: 1,
+               image: 'IP/1Lp/10.jpg',
+               title: 'Snake plant',
+               price: 600,
+            },
+            {
+               id: 2,
+               image: 'IP/1Lp/14.jpg',
+               title: 'Philodendron Micans',
+               price: 340,
+            },
+            {
+               id: 3,
+               image: 'IP/1Lp/19.jpg',
+               title: 'Calathea Sanderiana',
+               price: 369,
+            },
+            {
+               id: 4,
+               image: 'IP/1Lp/25.jpg',
+               title: 'Calathea Freddie',
+               price: 300,
+            },
+            {
+               id: 5,
+               image: 'IP/1Lp/28.jpg',
+               title: 'Cast iron plant',
+               price: 300,
+            },
+            {
+               id: 6,
+               image: 'IP/1Lp/31.jpg',
+               title: 'ZZ Green Plant',
+               price: 269,
+            },
+            {
+               id: 7,
+               image: 'IP/2Ap/36.jpg',
+               title: 'English Ivy',
+               price: 250,
+            },
+            {
+               id: 8,
+               image: 'IP/2Ap/44.jpg',
+               title: 'Spider plant',
+               price: 600,
+            },
+            {
+               id: 9,
+               image: 'IP/2Ap/47.jpg',
+               title: 'Peace Lily',
+               price: 340,
+            },
+            {
+               id: 10,
+               image: 'IP/2Ap/54.jpg',
+               title: 'Boston Fern',
+               price: 369,
+            },
+            {
+               id: 11,
+               image: 'IP/2Ap/60.jpg',
+               title: 'Aloe vera',
+               price: 300,
+            },
+            {
+               id: 12,
+               image: 'IP/2Ap/65.jpg',
+               title: 'Bamboo Palm',
+               price: 300,
+            },
+            {
+               id: 13,
+               image: 'IP/3Fp/66.jpg',
+               title: 'African Violet',
+               price: 280,
+            },
+            {
+               id: 14,
+               image: 'IP/3Fp/73.jpg',
+               title: 'Anthurium',
+               price: 600,
+            },
+            {
+               id: 15,
+               image: 'IP/3Fp/79.png',
+               title: 'Kalanchoe',
+               price: 340,
+            },
+            {
+               id: 16,
+               image: 'IP/3Fp/83.jpg',
+               title: 'Begonia',
+               price: 369,
+            },
+            {
+               id: 17,
+               image: 'IP/3Fp/86.jpg',
+               title: 'Jasmine',
+               price: 300,
+            },
+            {
+               id: 18,
+               image: 'IP/3Fp/91.jpg',
+               title: 'Orchids',
+               price: 300,
+            },
+            {
+               id: 19,
+               image: 'IP/4Sp/96 copy.jpg',
+               title: 'Saguaro Cactus',
+               price: 250,
+            },
+            {
+               id: 20,
+               image: 'IP/4Sp/101.jpg',
+               title: 'Jade Plant',
+               price: 600,
+            },
+            {
+               id: 21,
+               image: 'IP/4Sp/106.jpg',
+               title: 'Christmas Cactus',
+               price: 340,
+            },
+            {
+               id: 22,
+               image: 'IP/4Sp/114.jpg',
+               title: 'Prickly Pear',
+               price: 369,
+            },
+            {
+               id: 23,
+               image: 'IP/4Sp/124.jpg',
+               title: 'Sedum autumn joy',
+               price: 300,
+            },
+            {
+               id: 24,
+               image: 'IP/5Ip/130.jpg',
+               title: 'Parsley',
+               price: 250,
+            },
+            {
+               id: 25,
+               image: 'IP/5Ip/132.jpg',
+               title: 'Basil',
+               price: 600,
+            },
+            {
+               id: 26,
+               image: 'IP/5Ip/140.jpg',
+               title: 'Mint',
+               price: 340,
+            },
+            {
+               id: 27,
+               image: 'IP/5Ip/143.jpg',
+               title: 'Rosemary',
+               price: 369,
+            },
+            {
+               id: 28,
+               image: 'IP/5Ip/147.jpg',
+               title: 'Thyme',
+               price: 300,
+            },
+            {
+               id: 29,
+               image: 'IP/5Ip/153.jpg',
+               title: 'Chives',
+               price: 300,
+            },
+            {
+               id: 30,
+               image: 'IP/6Fop/160.jpg',
+               title: 'Monstera',
+               price: 250,
+            },
+            {
+               id: 31,
+               image: 'IP/6Fop/165.jpg',
+               title: 'Fiddle Leaf Fig',
+               price: 600,
+            },
+            {
+               id: 32,
+               image: 'IP/6Fop/167.jpg',
+               title: 'Rubber Plant',
+               price: 340,
+            },
+            {
+               id: 33,
+               image: 'IP/6Fop/171.jpg',
+               title: 'Chinese Evergreen',
+               price: 369,
+            },
+            {
+               id: 34,
+               image: 'IP/6Fop/179.jpg',
+               title: 'Calathea',
+               price: 300,
+            },
+            {
+               id: 35,
+               image: 'IP/6Fop/183.jpg',
+               title: 'Pothos',
+               price: 300,
+            },
+            {
+               id: 36,
+               image: 'IP/7Cp/193.jpg',
+               title: 'String of Pearls',
+               price: 600,
+            },
+            {
+               id: 37,
+               image: 'IP/7Cp/201.jpg',
+               title: 'Tradescantia',
+               price: 369,
+            },
+            {
+               id: 38,
+               image: 'IP/7Cp/209.jpg',
+               title: 'Golden Pothos',
+               price: 300,
+            },
+            {
+               id: 39,
+               image: 'IP/7Cp/211.png',
+               title: 'Hoya',
+               price: 300,
+            },
+            {
+               id: 40,
+               image: 'IP/8Tp/218.jpg',
+               title: 'Bird of Paradise',
+               price: 250,
+            },
+            {
+               id: 41,
+               image: 'IP/8Tp/236.jpg',
+               title: 'Alocasia',
+               price: 300,
+            },
+            {
+               id: 42,
+               image: 'IP/9Mp/319.jpg',
+               title: 'Mini Orchid',
+               price: 250,
+            },
+            {
+               id: 43,
+               image: 'IP/9Mp/323.jpg',
+               title: 'Mini Pothos',
+               price: 600,
+            },
+            {
+               id: 44,
+               image: 'IP/9Mp/327.jpg',
+               title: 'Haworthia',
+               price: 340,
+            },
+            {
+               id: 45,
+               image: 'IP/9Mp/333.jpg',
+               title: 'Baby Rubber Plant',
+               price: 369,
+            },
+            ,
+            {
+               id: 46,
+               image: 'IP/9Mp/336.jpg',
+               title: 'Mini Aloe Vera',
+               price: 300,
+            },
+            {
+               id: 47,
+               image: 'IP/9Mp/344.jpg',
+               title: 'Mini Calathea',
+               price: 300,
+            },
+
+         ];
+
+         let cart = [];
+         let i = 0;
+
+         const displayProducts = () => {
+            document.getElementById('root').innerHTML = product.map(item => {
+               return `
+               <div class='box'>
+                  <div class='img-box'>
+                     <img class='images' src='${item.image}' />
+                  </div>
+                  <div class='bottom'>
+                     <p>${item.title}</p>
+                     <h4>$${item.price}.00</h4>
+                     <button onclick='addtocart(${i++})'>Add to cart</button>
+                  </div>
+               </div>
+            `;
+            }).join('');
+         };
+
+         const addtocart = (index) => {
+            cart.push(product[index]);
+            displaycart();
+            updateCartCount();
+            updateTotal();
+         };
+
+         const delElement = (index) => {
+            cart.splice(index, 1);
+            displaycart();
+            updateCartCount();
+            updateTotal();
+         };
+
+         const displaycart = () => {
+            if (cart.length === 0) {
+               document.getElementById('cartItem').innerHTML = "Your Cart is Empty.";
+            } else {
+               document.getElementById("cartItem").innerHTML = cart.map((item, index) => {
+                  return `
+               <div class='cart-item'>
+                  <div class='row-img'>
+                     <img class='rowing' src='${item.image}' />
+                  </div>
+                  <p style='font-size:12px;'>${item.title}</p>
+                  <h2 style='font-size:15px;'>$${item.price}.00</h2>
+                  <i class='fa fa-trash' onclick='delElement(${index})'></i>
+               </div>
+               `;
+               }).join('');
+            }
+         };
+
+         const updateCartCount = () => {
+            document.getElementById('count').innerText = cart.length;
+         };
+
+         const updateTotal = () => {
+            let total = cart.reduce((sum, item) => sum + item.price, 0);
+            document.getElementById('total').innerText = `$${total}.00`;
+         };
+
+         displayProducts();
+      </script>
+
+
+
+
+
+
+
+
+
+
+
+      
+        <footer>
+            <a href="#" class="back-option">
+                BACK TO TOP
+            </a>
+
+            <div class="footer-links">
+
+                <ul>
+                    <p>Get to Know Us</p>
+                    <a>Careers</a>
+                    <a>Blog</a>
+                    <a>About String of Pearls</a>
+                    <a>Investor Relations</a>
+                    <a>String of Pearls Devices</a>
+                    <a>String of Pearls Science</a>
+                </ul>
+                <ul>
+                    <p>Make Money with Us</p>
+                    <a>Sell products on String of Pearls</a>
+                    <a>Sell on String of Pearls Business</a>
+                    <a>Sell apps on String of Pearls</a>
+                    <a>Become an Affiliate</a>
+                    <a>Self-Publish with Us</a>
+                    <a>Host an String of Pearls Hub</a>
+                    <a>See More Make Money with Us</a>
+                </ul>
+                <ul>
+                    <p>String of Pearls Payment Products</p>
+                    <a>String of Pearls Business Card</a>
+                    <a>Shop with Points</a>
+                    <a>Reload Your Balance</a>
+                    <a>String of Pearls Currency Converter</a>
+                </ul>
+                <ul>
+                    <p>Let Us Help You</p>
+                    <a>String of Pearls and COVID-19</a>
+                    <a>Your Account</a>
+                    <a>Your Orders</a>
+                    <a>Shipping Rates & Policies</a>
+                    <a>Returns & Replacements</a>
+                    <a>Manage Your Content and Devices</a>
+                    <a>String of Pearls Assistant</a>
+                    <a>Help</a>
+                </ul>
+            </div>
+            <div class="country-info">
+                <div><img src="img/logo1.png"></div>
+                <div class="logo">
+                    <div width="150px" height="70px">
+                        <img src="img/logo2.png" style="width: 150;">
+                    </div>
+                </div>
+                <div class="options">
+                    <select>
+                        <option value="En">
+                            English
+                        </option>
+                    </select>
+                    <select>
+                        <option value="1">
+                            $ USD - U.S. Dollar
+                        </option>
+                    </select>
+
+                    <select>
+                        <option value="4">
+                            United states
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="policies">
+                <div class="pages">
+                    <a href="#">Conditions of Use</a>
+                    <a href="#">Privacy Notice</a>
+                    <a href="#">Your Ads Privacy Choices</a>
+                </div>
+                © 1996-2023,String of Pearls-The complete storehouse of Indoorplants,String of Pearls.com, Inc. or its
+                affiliates
+            </div>
+        </footer>
+
+</body>
+
+</html>

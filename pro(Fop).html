@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title> FOLIAGE PLANTS</title>
+   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+   <style>
+      .plant-card:hover .cart-icon {
+         opacity: 1;
+      }
+
+      .plant-card {
+         position: relative;
+      }
+
+      .cart-icon {
+         position: absolute;
+         top: 10px;
+         right: 10px;
+         opacity: 0;
+         transition: opacity 0.3s;
+      }
+
+      .star-rating {
+         color: #FFD700;
+         font-size: 1rem;
+      }
+
+      body,
+      html {
+         height: 100%;
+         margin: 0;
+         font-family: Arial, Helvetica, sans-serif;
+      }
+
+
+      .hero-image {
+         background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/ani8.jpg");
+         height: 50%;
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: cover;
+         position: relative;
+      }
+
+      .hero-text {
+         text-align: center;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         color: white;
+      }
+
+      .hero-text button {
+         border: 1px solid green;
+         border-radius: 30px;
+         outline: 0;
+         display: inline-block;
+         padding: 10px 25px;
+         color: black;
+         background-color: #59906273;
+         text-align: center;
+         cursor: pointer;
+      }
+
+      .hero-text button:hover {
+         background-color: #fffefe1e;
+         color: white;
+      }
+      #scrollToTopBtn {
+               display: none;
+               position: fixed;
+               bottom: 5px;
+               right: px;
+               z-index: 99;
+               border: none;
+               outline: none;
+               background-color: #ffcc00;
+               color: white;
+               cursor: pointer;
+               padding: 15px;
+               border-radius: 20px;
+               font-size: 18px;
+
+          }
+
+          #scrollToTopBtn:hover {
+               background-color: #e6b800;          }
+
+   </style>
+</head>
+<div class="hero-image">
+   <div class="hero-text">
+      <h1 style="font-size:50px">FOLIAGE PLANTS</h1>
+      <p> Foliage indoor plants are prized for their lush, vibrant leaves that bring a touch of nature's beauty
+         indoors.</p>
+      <button> <div class="nav-logo" width="160px" height="100px">
+         <a href="index.html"> <img src="img/logo1.png"></a>
+     </div></button>
+   </div>
+</div>
+
+<body class="bg-gray-100">
+
+   <div class="flex flex-wrap">
+
+      <!-- Filter Section -->
+      <aside class="w-full md:w-1/4 p-4">
+         <div class="bg-white p-6 rounded-lg shadow-lg mb-6">
+            <h3 class="text-xl font-semibold mb-4">Filters</h3>
+
+            <!-- Availability Filter -->
+            <div class="mb-4">
+               <label class="block text-gray-700 mb-2">Availability</label>
+               <label class="inline-flex items-center">
+                  <input type="checkbox" class="form-checkbox" checked>
+                  <span class="ml-2">In stock</span>
+               </label>
+               <label class="inline-flex items-center ml-4">
+                  <input type="checkbox" class="form-checkbox">
+                  <span class="ml-2">Out of stock</span>
+               </label>
+            </div>
+
+            <!-- Price Range Filter -->
+            <div class="mb-4">
+               <label class="block text-gray-700 mb-2">Price</label>
+               <input type="range" id="priceRange" min="0" max="575" class="w-full" oninput="updateFilters()">
+               <div class="flex justify-between text-sm text-gray-500 mt-2">
+                  <span>Min: $0</span>
+                  <span>Max: $575</span>
+               </div>
+            </div>
+
+            <!-- Brand Filter -->
+            <div class="mb-4">
+               <label class="block text-gray-700 mb-2">Brand</label>
+               <label class="inline-flex items-center">
+                  <input type="checkbox" class="form-checkbox">
+                  <span class="ml-2">Plants</span>
+               </label>
+            </div>
+
+            <!-- Sort By Filter -->
+            <div class="mb-4">
+               <label class="block text-gray-700 mb-2">Sort By</label>
+               <select id="sortBy" class="form-select w-full" onchange="updateFilters()">
+                  <option value="">Select an option</option>
+                  <option value="price-asc">Price: Low to High</option>
+                  <option value="price-desc">Price: High to Low</option>
+                  <option value="rating-asc">Rating: Low to High</option>
+                  <option value="rating-desc">Rating: High to Low</option>
+               </select>
+            </div>
+         </div>
+      </aside>
+
+      <!-- Plant Grid Section -->
+
+
+      <main class="w-full md:w-3/4 p-4">
+         <h3>FOLIAGE PLANTS</h3>
+         <p>
+            Foliage indoor plants are prized for their lush, vibrant leaves that bring a touch of nature's beauty
+            indoors. These plants, such as the Monstera, with its iconic split leaves, and the Fiddle Leaf Fig, known
+            for its large, glossy foliage, make striking statement pieces in any room. The Spider Plant is another
+            favorite, with its arching green and white-striped leaves that add a dynamic, cascading effect. Pothos, with
+            its heart-shaped leaves and trailing vines, is easy to care for and thrives in various lighting conditions.
+            The Calathea, admired for its intricate patterns and bold leaf colors, adds a unique touch to your indoor
+            garden. Peace Lily, with its dark green leaves, not only purifies the air but also offers elegant white
+            blooms. These foliage plants are perfect for creating a lush, green sanctuary within your home, adding
+            texture, color, and a soothing natural atmosphere.
+         </p>
+         <div id="plantGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Plant Card 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg plant-card" data-price="0" data-rating="5">
+               <img src="C:\Users\user\Desktop\test stringofpearls\img\monstera.jpg" alt="Monstera"
+                  class="w-full h-40 object-cover mb-4 rounded">
+               <h2 class="text-xl font-semibold mb-2">Monstera</h2>
+               <p class="text-gray-600 mb-4">This remarkable ability not only fuels their own growth but also acts
+                  as the primary source of sustenance for...</p>
+               <div class="star-rating mb-2">
+                  ★★★★★
+               </div>
+               <div class="flex justify-between items-center">
+                  <span class="text-lg font-bold">$250.00</span>
+                 
+               </div>
+            </div>
+
+            <!-- Plant Card 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg plant-card" data-price="575" data-rating="5">
+               <img src="C:\Users\user\Desktop\test stringofpearls\img\fig-.jpg" alt="Fiddle Leaf Fig"
+                  class="w-full h-40 object-cover mb-4 rounded">
+               <h2 class="text-xl font-semibold mb-2">Fiddle Leaf Fig</h2>
+               <p class="text-gray-600 mb-4">The Fiddle Leaf Fig is a striking indoor tree with large, glossy leaves,
+                  thriving in bright, indirect light and requiring regular watering.</p>
+               <div class="star-rating mb-2">
+                  ★★★★★
+               </div>
+               <div class="flex justify-between items-center">
+                  <span class="text-lg font-bold"><del>$600.00</del> $575.00</span>
+                  
+               </div>
+            </div>
+
+            <!-- Plant Card 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg plant-card" data-price="267" data-rating="4">
+               <img src="C:\Users\user\Desktop\test stringofpearls\img\pic 17rubber-fig.png" alt="Rubber Plant"
+                  class="w-full h-40 object-cover mb-4 rounded">
+               <h2 class="text-xl font-semibold mb-2">Rubber Plant</h2>
+               <p class="text-gray-600 mb-4">The Rubber Plant is a robust indoor tree with large, shiny leaves, thriving
+                  in bright, indirect light and needing moderate watering.</p>
+               <div class="star-rating mb-2">
+                  ★★★★☆
+               </div>
+               <div class="flex justify-between items-center">
+                  <span class="text-lg font-bold"><del>$340.00</del> $267.00</span>
+                 
+               </div>
+            </div>
+
+            <!-- Plant Card 4 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg plant-card" data-price="369" data-rating="3">
+               <img src="C:\Users\user\Desktop\test stringofpearls\img\chinese ebergrn.jpg" alt="Chinese Evergreen"
+                  class="w-full h-40 object-cover mb-4 rounded">
+               <h2 class="text-xl font-semibold mb-2">Chinese Evergreen</h2>
+               <p class="text-gray-600 mb-4">The Chinese Evergreen is a versatile indoor plant with attractive, glossy
+                  leaves, thriving in low to moderate light and low-maintenance care.</p>
+               <div class="star-rating mb-2">
+                  ★★★☆☆
+               </div>
+               <div class="flex justify-between items-center">
+                  <span class="text-lg font-bold">$369.00</span>
+                 
+               </div>
+            </div>
+
+            <!-- Plant Card 5 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg plant-card" data-price="285" data-rating="4">
+               <img src="C:\Users\user\Desktop\test stringofpearls\img\cala2.jpg" alt="Calathea"
+                  class="w-full h-40 object-cover mb-4 rounded">
+               <h2 class="text-xl font-semibold mb-2">Calathea</h2>
+               <p class="text-gray-600 mb-4">The Calathea is a stunning indoor plant with strikingly patterned leaves
+                  that fold up at night, thriving in low to moderate light and high humidity.</p>
+               <div class="star-rating mb-2">
+                  ★★★★☆
+               </div>
+               <div class="flex justify-between items-center">
+                  <span class="text-lg font-bold"><del>$300.00</del> $285.00</span>
+                 
+               </div>
+            </div>
+
+            <!-- Plant Card 6 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg plant-card" data-price="285" data-rating="4">
+               <img src="C:\Users\user\Desktop\test stringofpearls\img\pothos1.jpg" alt="Pothos"
+                  class="w-full h-40 object-cover mb-4 rounded">
+               <h2 class="text-xl font-semibold mb-2">Pothos</h2>
+               <p class="text-gray-600 mb-4">Pothos is a low-maintenance indoor plant with trailing vines and
+                  heart-shaped leaves, thriving in various light conditions and needing minimal care.</p>
+               <div class="star-rating mb-2">
+                  ★★★★☆
+               </div>
+               <div class="flex justify-between items-center">
+                  <span class="text-lg font-bold"><del>$300.00</del> $285.00</span>
+                 
+               </div>
+            </div>
+         </div>
+      </main>
+   </div>
+
+   <!-- JavaScript -->
+   <script>
+      function updateFilters() {
+         sortPlants();
+      }
+
+      function sortPlants() {
+         const sortBy = document.getElementById('sortBy').value;
+         const plantGrid = document.getElementById('plantGrid');
+         const plantCards = Array.from(plantGrid.getElementsByClassName('plant-card'));
+
+         plantCards.sort((a, b) => {
+            const priceA = parseFloat(a.getAttribute('data-price'));
+            const priceB = parseFloat(b.getAttribute('data-price'));
+            const ratingA = parseFloat(a.getAttribute('data-rating'));
+            const ratingB = parseFloat(b.getAttribute('data-rating'));
+
+            switch (sortBy) {
+               case 'price-asc':
+                  return priceA - priceB;
+               case 'price-desc':
+                  return priceB - priceA;
+               case 'rating-asc':
+                  return ratingA - ratingB;
+               case 'rating-desc':
+                  return ratingB - ratingA;
+               default:
+                  return 0;
+            }
+         });
+
+         // Clear the current grid and append the sorted cards
+         plantGrid.innerHTML = '';
+         plantCards.forEach(card => plantGrid.appendChild(card));
+      }
+
+      // Initialize sorting on page load
+      updateFilters();
+   </script>
+<div class="">
+   <button id="scrollToTopBtn" title="Go to top">▲</button>
+</div>
+<script>
+   let mybutton = document.getElementById("scrollToTopBtn");
+
+
+   window.onscroll = function () { scrollFunction() };
+
+   function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+         mybutton.style.display = "block";
+      } else {
+         mybutton.style.display = "none";
+      }
+   }
+   mybutton.onclick = function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+   }
+</script>
+</body>
+
+</html>

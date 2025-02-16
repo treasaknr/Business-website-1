@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>AIR PURIFYING PLANTS</title>
+   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+   <style>
+      .plant-card:hover .cart-icon {
+         opacity: 1;
+      }
+
+      .plant-card {
+         position: relative;
+      }
+
+      .cart-icon {
+         position: absolute;
+         top: 10px;
+         right: 10px;
+         opacity: 0;
+         transition: opacity 0.3s;
+      }
+
+      .star-rating {
+         color: #FFD700;
+         font-size: 1rem;
+      }
+      body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: Poppins, sans-serif;
+        }
+
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/bambo.jpg");
+            height: 50%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        .hero-text {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+
+        .hero-text button {
+            border: 1px solid green;
+            border-radius: 30px;
+            outline: 0;
+            display: inline-block;
+            padding: 10px 25px;
+            color: black;
+            background-color: #59906273;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .hero-text button:hover {
+            background-color: #fffefe1e;
+            color: white;
+        }
+        #scrollToTopBtn {
+               display: none;
+               position: fixed;
+               bottom: 5px;
+               right: px;
+               z-index: 99;
+               border: none;
+               outline: none;
+               background-color: #ffcc00;
+               color: white;
+               cursor: pointer;
+               padding: 15px;
+               border-radius: 20px;
+               font-size: 18px;
+
+          }
+
+          #scrollToTopBtn:hover {
+               background-color: #e6b800;
+          }
+
+   </style>
+</head>
+<div class="hero-image">
+   <div class="hero-text">
+      
+       <h1 style="font-size:50px">AIR PURIFYING PLANTS</h1>
+       <p>Air-purifying plants are natural filters that help improve indoor air quality by removing toxins and
+         releasing oxygen.</p>
+       <button> <div class="nav-logo" width="160px" height="100px">
+         <a href="index.html"> <img src="img/logo1.png"></a>
+     </div></button>
+   </div>
+</div>
+
+<body class="bg-gray-100">
+
+   <div class="flex flex-wrap">
+
+      <!-- Filter Section -->
+      <aside class="w-full md:w-1/4 p-4">
+         <div class="bg-white p-6 rounded-lg shadow-lg mb-6">
+            <h3 class="text-xl font-semibold mb-4">Filters</h3>
+
+            <!-- Availability Filter -->
+            <div class="mb-4">
+               <label class="block text-gray-700 mb-2">Availability</label>
+               <label class="inline-flex items-center">
+                  <input type="checkbox" class="form-checkbox" checked>
+                  <span class="ml-2">In stock</span>
+               </label>
+               <label class="inline-flex items-center ml-4">
+                  <input type="checkbox" class="form-checkbox">
+                  <span class="ml-2">Out of stock</span>
+               </label>
+            </div>
+
+            <!-- Price Range Filter -->
+            <div class="mb-4">
+               <label class="block text-gray-700 mb-2">Price</label>
+               <input type="range" id="priceRange" min="0" max="575" class="w-full" oninput="updateFilters()">
+               <div class="flex justify-between text-sm text-gray-500 mt-2">
+                  <span>Min: $0</span>
+                  <span>Max: $575</span>
+               </div>
+            </div>
+
+            <!-- Brand Filter -->
+            <div class="mb-4">
+               <label class="block text-gray-700 mb-2">Brand</label>
+               <label class="inline-flex items-center">
+                  <input type="checkbox" class="form-checkbox">
+                  <span class="ml-2">Plants</span>
+               </label>
+            </div>
+
+            <!-- Sort By Filter -->
+            <div class="mb-4">
+               <label class="block text-gray-700 mb-2">Sort By</label>
+               <select id="sortBy" class="form-select w-full" onchange="updateFilters()">
+                  <option value="">Select an option</option>
+                  <option value="price-asc">Price: Low to High</option>
+                  <option value="price-desc">Price: High to Low</option>
+                  <option value="rating-asc">Rating: Low to High</option>
+                  <option value="rating-desc">Rating: High to Low</option>
+               </select>
+            </div>
+         </div>
+      </aside>
+
+      <!-- Plant Grid Section -->
+
+
+      <main class="w-full md:w-3/4 p-4">
+         <h3>AIR PURIFYING PLANTS</h3>
+         <p>
+            Air-purifying plants are natural filters that help improve indoor air quality by removing toxins and
+            releasing oxygen. Popular choices include the Spider Plant, Peace Lily, and Aloe Vera, which are known for
+            their ability to absorb harmful pollutants like formaldehyde, benzene, and carbon monoxide. These plants are
+            not only beneficial for your health but also easy to maintain, thriving in various indoor conditions. Their
+            lush green foliage adds aesthetic appeal to any space, making them a practical and beautiful addition to
+            homes or offices. By incorporating air-purifying plants, you can create a fresher, healthier living
+            environment.
+         </p>
+         <div id="plantGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Plant Card 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg plant-card" data-price="0" data-rating="5">
+               <img src="img/pic 20 ivy-vine.png" alt="English Ivy" class="w-full h-40 object-cover mb-4 rounded">
+               <h2 class="text-xl font-semibold mb-2">English Ivy</h2>
+               <p class="text-gray-600 mb-4">This remarkable ability not only fuels their own growth but also acts
+                  as the primary source of sustenance for...</p>
+               <div class="star-rating mb-2">
+                  ★★★★★
+               </div>
+               <div class="flex justify-between items-center">
+                  <span class="text-lg font-bold">$250.00</span>
+                 
+               </div>
+            </div>
+
+            <!-- Plant Card 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg plant-card" data-price="575" data-rating="5">
+               <img src="img/spiderplt.jpg" alt=" Plant" class="w-full h-40 object-cover mb-4 rounded">
+               <h2 class="text-xl font-semibold mb-2">Spider plant</h2>
+               <p class="text-gray-600 mb-4">The Spider Plant is a low-maintenance, air-purifying indoor plant with arching green and white leaves, perfect for bright, indirect light.</p>
+               <div class="star-rating mb-2">
+                  ★★★★★
+               </div>
+               <div class="flex justify-between items-center">
+                  <span class="text-lg font-bold"><del>$600.00</del> $575.00</span>
+                 
+               </div>
+            </div>
+
+            <!-- Plant Card 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg plant-card" data-price="267" data-rating="4">
+               <img src="img/pic 12 flowerpot-peace-lily.png" alt="P" class="w-full h-40 object-cover mb-4 rounded">
+               <h2 class="text-xl font-semibold mb-2">Peace Lily</h2>
+               <p class="text-gray-600 mb-4">The Peace Lily is a low-light indoor plant known for its elegant white blooms and air-purifying abilities.</p>
+               <div class="star-rating mb-2">
+                  ★★★★☆
+               </div>
+               <div class="flex justify-between items-center">
+                  <span class="text-lg font-bold"><del>$340.00</del> $267.00</span>
+                 
+               </div>
+            </div>
+
+            <!-- Plant Card 4 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg plant-card" data-price="369" data-rating="3">
+               <img src="img/boston-fern-.jpg" alt="boston Fern" class="w-full h-40 object-cover mb-4 rounded">
+               <h2 class="text-xl font-semibold mb-2">Boston Fern</h2>
+               <p class="text-gray-600 mb-4">The Boston Fern is a lush indoor plant with feathery, arching fronds that thrives in humid, low-light environments.</p>
+               <div class="star-rating mb-2">
+                  ★★★☆☆
+               </div>
+               <div class="flex justify-between items-center">
+                  <span class="text-lg font-bold">$369.00</span>
+                
+               </div>
+            </div>
+
+            <!-- Plant Card 5 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg plant-card" data-price="285" data-rating="4">
+               <img src="img/green-aloe-vera.jpg" alt="aloe-vera-class=" w-full h-40 object-cover mb-4 rounded">
+               <h2 class="text-xl font-semibold mb-2">Aloe vera</h2>
+               <p class="text-gray-600 mb-4">Aloe Vera is a hardy succulent known for its thick, fleshy leaves containing soothing gel, ideal for bright, indirect light.</p>
+               <div class="star-rating mb-2">
+                  ★★★★☆
+               </div>
+               <div class="flex justify-between items-center">
+                  <span class="text-lg font-bold"><del>$300.00</del> $285.00</span>
+                 
+               </div>
+            </div>
+
+            <!-- Plant Card 6 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg plant-card" data-price="285" data-rating="4">
+               <img src="img/bamboo-plant-.jpg" alt="Bamboo" class="w-full h-40 object-cover mb-4 rounded">
+               <h2 class="text-xl font-semibold mb-2">Bamboo Palm</h2>
+               <p class="text-gray-600 mb-4">The Bamboo Palm is an elegant indoor plant with slender, bamboo-like stems and feathery fronds, thriving in low to moderate light.</p>
+               <div class="star-rating mb-2">
+                  ★★★★☆
+               </div>
+               <div class="flex justify-between items-center">
+                  <span class="text-lg font-bold"><del>$300.00</del> $285.00</span>
+                
+               </div>
+            </div>
+         </div>
+      </main>
+   </div>
+
+   <!-- JavaScript -->
+   <script>
+      function updateFilters() {
+         sortPlants();
+      }
+
+      function sortPlants() {
+         const sortBy = document.getElementById('sortBy').value;
+         const plantGrid = document.getElementById('plantGrid');
+         const plantCards = Array.from(plantGrid.getElementsByClassName('plant-card'));
+
+         plantCards.sort((a, b) => {
+            const priceA = parseFloat(a.getAttribute('data-price'));
+            const priceB = parseFloat(b.getAttribute('data-price'));
+            const ratingA = parseFloat(a.getAttribute('data-rating'));
+            const ratingB = parseFloat(b.getAttribute('data-rating'));
+
+            switch (sortBy) {
+               case 'price-asc':
+                  return priceA - priceB;
+               case 'price-desc':
+                  return priceB - priceA;
+               case 'rating-asc':
+                  return ratingA - ratingB;
+               case 'rating-desc':
+                  return ratingB - ratingA;
+               default:
+                  return 0;
+            }
+         });
+
+         // Clear the current grid and append the sorted cards
+         plantGrid.innerHTML = '';
+         plantCards.forEach(card => plantGrid.appendChild(card));
+      }
+
+      // Initialize sorting on page load
+      updateFilters();
+   </script>
+<div class="">
+   <button id="scrollToTopBtn" title="Go to top">▲</button>
+</div>
+<script>
+   let mybutton = document.getElementById("scrollToTopBtn");
+
+
+   window.onscroll = function () { scrollFunction() };
+
+   function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+         mybutton.style.display = "block";
+      } else {
+         mybutton.style.display = "none";
+      }
+   }
+   mybutton.onclick = function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+   }
+</script>
+</body>
+
+</html>

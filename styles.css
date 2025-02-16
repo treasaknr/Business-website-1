@@ -3,15 +3,108 @@
    padding: 0;
    text-decoration: none;
    box-sizing: border-box;
-   list-style: none;
+
+}
+
+header {
+   position: fixed;
+   top: 0;
+   width: 100%;
+   z-index: 1000;
+   background-color: #ffffff;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 body {
+   padding-top: 120px;
    width: 100%;
    height: 100vh;
    background-color: #f5f6f6;
    box-sizing: border-box;
    font-family: Poppins;
+}
+
+.order-option a,
+.cart-option a,
+.account-option a {
+   color: white;
+}
+
+
+.fa-xmark {
+   top: 20px;
+   left: 400px;
+   position: absolute;
+   font-size: 30px;
+   display: none;
+
+}
+
+.fa-angle-right {
+   color: rgb(27, 27, 27)
+}
+
+.sidebar .active {
+   transform: translateX(0);
+}
+
+.hdn-head {
+   background-color: #232F3E;
+   height: 60px;
+   width: 50%;
+   color: white;
+   text-align: center;
+}
+
+.hdn-head h2 {
+   line-height: 60px;
+}
+
+.hdn-head h3 {
+   padding: 20px 25px;
+   color: rgb(39, 39, 39);
+}
+
+.hdn-content ul {
+   padding-bottom: 9px;
+}
+
+.hdn-content ul div {
+   justify-content: space-between;
+   display: flex;
+   cursor: pointer;
+   transition: all 0.2s;
+   font-size: 14px;
+   color: rgb(205, 205, 205);
+   padding: 15px 25px;
+}
+
+.hdn-content ul div:hover {
+   background-color: rgba(64, 120, 110, 0.299);
+}
+
+.hdn-content ul {
+   padding-bottom: 9px;
+}
+
+.black {
+   position: absolute;
+   width: 0%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.7);
+}
+
+.black.active {
+   width: 100%;
+   z-index: 100
+}
+
+.fa-xmark .active {
+   display: block;
+}
+
+.payment-container p {
+   color: white;
 }
 
 /* Header  */
@@ -30,14 +123,48 @@ nav {
    margin-left: .5rem;
 }
 
-.nav-logo img {
-   width: 100px;
-   padding: .5rem;
+.carousel-heading {
+   text-shadow:
+      2px 2px 5px rgba(250, 213, 0, 0.727),
+      0 0 25px rgba(0, 128, 0, 0.5),
+      0 0 5px rgb(252, 255, 252);
+   text-align: center;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   color: white;
 }
 
-.nav-logo:hover {
-   outline: 1px solid white;
+h6 {
+   text-align: center;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   color: rgb(170, 255, 0);
+   background-color: #5555555b;
+   border-radius: 15%;
 }
+
+.hero-text button {
+   border: none;
+   outline: 0;
+   display: inline-block;
+   padding: 10px 25px;
+   color: black;
+   background-color: #ddd;
+   text-align: center;
+   cursor: pointer;
+}
+
+
+
+.hero-text button:hover {
+   background-color: #555;
+   color: white;
+}
+
 
 .location {
    height: 100%;
@@ -64,13 +191,13 @@ nav {
 }
 
 .nav-center:hover {
-   outline: 2px solid rgb(23, 83, 64);
+   outline: 2px solid rgba(113, 139, 51, 0.979);
 }
 
 .search-dropdown {
    width: 5rem;
    font-size: 1rem;
-   background-color: rgba(42, 108, 86, 0.811);
+   background-color: rgba(113, 159, 143, 0.979);
    padding: .5rem;
    border-radius: 5px 0 0 5px;
    outline: none;
@@ -92,7 +219,7 @@ nav {
 
 .search-icon i {
    height: 100%;
-   background-color: rgb(59, 125, 103);
+   background-color: rgba(179, 181, 179, 0.979);
    border-radius: 0 5px 5px 0;
    padding: .7rem .5rem;
    outline: none;
@@ -188,8 +315,17 @@ nav {
 }
 
 .cart-logo i {
-   width: 20px;
+   width: 15px;
+   height: 15px;
 }
+
+.cart-logo i:hover {
+   outline: 1px solid rgb(250, 249, 249);
+   background-color: rgba(113, 159, 143, 0.979);
+   color: black;
+   border-radius: 10px;
+}
+
 
 .nav-options {
    height: 42px;
@@ -201,11 +337,16 @@ nav {
 
 }
 
+.nav-options .all-logo p {
+   color: white;
+}
+
 .nav-options * {
    cursor: pointer;
 }
 
 .all-logo {
+   color: white;
    display: flex;
    align-items: center;
    gap: .3rem;
@@ -213,20 +354,49 @@ nav {
    margin-left: 2rem;
 }
 
+.blog-header {
+   text-align: center;
+   font-size: 60px;
+   font-weight: 800;
+   color: #714e4eb5;
+   text-shadow: #f4f4f4b4;
+}
+
 .all-logo:hover {
-   outline: 1px solid white;
+   outline: 1px solid rgb(250, 249, 249);
+   background-color: rgba(113, 159, 143, 0.979);
+   color: black;
+   border-radius: 10px;
+}
+
+.active {
+   color: #cccccc;
+   background-color: #3a5241;
+   border: 1px solid rgb(255, 254, 254);
+
+   .active:hover {
+      color: #5a9a1b;
+      background-color: rgb(255, 254, 254);
+      border: 1px solid rgb(255, 254, 254);
+   }
+
 }
 
 .nav-options .options {
    display: flex;
+
 }
 
 .nav-options .options p {
    padding: 0.5rem;
+   color: #fff;
 }
 
 .nav-options .options p:hover {
-   outline: 1px solid white;
+   outline: 1px solid rgb(250, 249, 249);
+   background-color: rgba(113, 159, 143, 0.979);
+   color: black;
+
 }
 
 /* Main */
@@ -313,11 +483,42 @@ main {
    color: #007185;
 }
 
+.carousel-heading {
+   position: absolute;
+   top: 25%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   font-size: 4rem;
+   font-weight: 400;
+   color: #51793ad3;
+   text-align: center;
+   z-index: 10;
+}
+
+
+.carousel-heading {
+   position: absolute;
+   top: 30%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   font-size: 3rem;
+   font-weight: 800;
+   color: #273f14;
+   text-align: center;
+   z-index: 3;
+}
+
+.slides-container {
+   position: relative;
+}
+
+
 .items-container {
+   margin-top: 15px;
    display: flex;
    flex-wrap: wrap;
    gap: 1.5rem;
-   background-color: #bcbcbc82;
+   background-color: #3d0000c7;
    padding: 0 2rem 2rem 2rem;
 }
 
@@ -337,7 +538,7 @@ main {
 .item-card img {
    height: 300px;
    width: 100%;
-   border: 2px solid black;
+   border: 2px solid rgb(6, 0, 0);
    object-fit: cover;
 }
 
@@ -346,6 +547,193 @@ main {
    font-weight: bold;
    color: #007185;
 }
+
+/*......cartitems...*/
+.cart-page {
+   margin: 80px auto;
+}
+
+.table {
+   width: 100%;
+   border-collapse: collapse;
+}
+
+.cart-info {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.th {
+   text-align: left;
+   padding: 5px;
+   color: white;
+   background: #9e0505;
+   font-weight: normal;
+}
+
+.td {
+   padding: 10px 5px;
+}
+
+.td input {
+   width: 40px;
+   height: 30px;
+   padding: 5px;
+
+}
+
+.td a {
+   color: #9e0505;
+   font-size: 12px;
+}
+
+.td img {
+   width: 80px;
+   height: 80px;
+   margin-right: 10px;
+}
+
+.total-price {
+   display: flex;
+   justify-content: flex-end;
+}
+
+.total-price table {
+   border-top: 3px solid #9e0505;
+   width: 100%;
+   max-width: 560px;
+}
+
+td:last-child {
+   text-align: right;
+}
+
+th:last-child {
+   text-align: right;
+}
+
+/*..........account..............*/
+.account-page {
+   padding: 50px 0;
+   background: radial-gradient(#fff, #ffd6d6);
+}
+
+.form-container {
+   background: #fbfafa;
+   width: 300px;
+   height: 400px;
+   text-align: center;
+   position: relative;
+   padding: 20px 0;
+   margin: auto;
+   box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0, 0.1);
+   overflow: hidden;
+}
+
+.form-container span {
+   font-weight: bold;
+   padding: 0 10px;
+   color: #6d0404b3;
+   cursor: pointer;
+   width: 100px;
+   display: inline-block;
+}
+
+.form-btn {
+   display: inline-block;
+}
+
+.form-container form {
+   max-width: 300px;
+   padding: 0 20px;
+   position: absolute;
+   top: 130px;
+   transition: transform 1s;
+}
+
+.form input {
+   width: 100px;
+   height: 30px;
+   margin: 10px 0;
+   top: 0 10px;
+   border: 1px solid #9e0505;
+}
+
+form .btn {
+   width: 100%;
+   border: none;
+   cursor: pointer;
+   margin: 10px 0;
+}
+
+form .btn:focus {
+   outline: none;
+}
+
+#Loginform {
+   left: -300px;
+}
+
+#Regform {
+   left: 0
+}
+
+form a {
+   font: size 12px;
+}
+
+#indicator {
+   width: 100px;
+   border: none;
+   background: #9e0505;
+   height: 3px;
+   margin: top 8px;
+   transform: translateX(100px);
+   transition: transform 1s;
+}
+
+#scrollToTopBtn {
+   display: none;
+   position: fixed;
+   bottom: 5px;
+   right: px;
+   z-index: 99;
+   border: none;
+   outline: none;
+   background-color: #13611c76;
+   color: rgb(3, 0, 0);
+   cursor: pointer;
+   padding: 12px;
+   border-radius: 15px;
+   font-size: 18px;
+
+}
+
+#scrollToTopBtn:hover {
+   background-color: #ffffff;
+}
+
+#scrollToTopBtn {
+   display: none;
+   position: fixed;
+   bottom: 5px;
+   right: px;
+   z-index: 99;
+   border: none;
+   outline: none;
+   background-color: #ffcc00;
+   color: white;
+   cursor: pointer;
+   padding: 15px;
+   border-radius: 20px;
+   font-size: 18px;
+
+}
+
+#scrollToTopBtn:hover {
+   background-color: #e6b800;
+}
+
 
 /* Footer */
 .back-option {
@@ -521,6 +909,15 @@ main {
    :root {
       font-size: 2vw;
    }
+h1{
+   font-size: 18px;
+}
+body {
+   padding-top: 5%;
+   
+}
+
+
 
    /* Header  */
    nav {
@@ -564,6 +961,10 @@ main {
       height: 30vw;
    }
 
+   .carousel-heading {
+      font-size: 28px;
+   }
+
    .arrow i {
       height: 4vw;
    }
@@ -594,5 +995,96 @@ main {
 
    .policies {
       height: 8vw;
+   }
+
+   .cart-info {
+      display: none;
+   }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+   /* Adjust the navigation bar */
+   .nav-left,
+   .nav-center,
+   .nav-right {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .nav-logo img {
+      width: 120px;
+      height: auto;
+   }
+
+   .nav-center {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+   }
+
+   .search-box {
+      width: 80%;
+      margin: 0 10px;
+   }
+
+   .nav-options {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .options a {
+      display: block;
+      margin: 5px 0;
+   }
+
+   /* Adjust carousel for tablets */
+   .carousel {
+      width: 100%;
+      height: auto;
+   }
+
+   .slide img {
+      width: 100%;
+      height: auto;
+   }
+
+   .hero-text {
+      font-size: 1.5em;
+      text-align: center;
+   }
+
+   /* Adjust item cards for tablets */
+   .items-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+   }
+
+   .item-card {
+      width: 100%;
+      margin-bottom: 20px;
+   }
+
+   .item-card img {
+      width: 100%;
+      height: auto;
+   }
+
+   /* Adjust footer */
+   .footer-links ul {
+      width: 50%;
+      margin-bottom: 20px;
+   }
+
+   .country-info .options {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .policies .pages {
+      text-align: center;
    }
 }

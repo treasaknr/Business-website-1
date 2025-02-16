@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Reviews</title>
+   <style>
+      .reviews-section {
+  margin-top: 40px;
+}
+
+.reviews-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.review-form {
+  margin-top: 30px;
+}
+
+.review-form h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.review-form label {
+  display: block;
+  margin: 5px 0;
+}
+
+.review-form input, .review-form select, .review-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.review-form button {
+  background-color: #004D40;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.review-form button:hover {
+  background-color: #00332e;
+}
+
+.review-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.review-item .review-name {
+  font-weight: bold;
+}
+
+.review-item .review-rating {
+  color: gold;
+}
+
+.review-item .review-text {
+  margin-top: 5px;
+}
+#scrollToTopBtn {
+               display: none;
+               position: fixed;
+               bottom: 5px;
+               right: px;
+               z-index: 99;
+               border: none;
+               outline: none;
+               background-color: #ffcc00;
+               color: white;
+               cursor: pointer;
+               padding: 15px;
+               border-radius: 20px;
+               font-size: 18px;
+
+          }
+
+          #scrollToTopBtn:hover {
+               background-color: #e6b800;
+          }
+          #scrollToTopBtn {
+               display: none;
+               position: fixed;
+               bottom: 5px;
+               right: px;
+               z-index: 99;
+               border: none;
+               outline: none;
+               background-color: #ffcc00;
+               color: white;
+               cursor: pointer;
+               padding: 15px;
+               border-radius: 20px;
+               font-size: 18px;
+
+          }
+
+          #scrollToTopBtn:hover {
+               background-color: #e6b800;
+          }
+
+
+   </style>
+</head>
+<body>
+   
+
+<div class="nav-logo" width="160px" height="100px">
+  <a href="index.html"> <img src="img/logo1.png"></a>
+</div>
+<div class="reviews-section">
+   <h2>Reviews</h2>
+   <div id="reviews-list"></div>
+   
+   <div class="review-form">
+     <h3>Leave a Review</h3>
+     <form id="review-form">
+       <label for="review-name">Name:</label>
+       <input type="text" id="review-name" required>
+       
+       <label for="review-rating">Rating:</label>
+       <select id="review-rating" required>
+         <option value="1">1 Star</option>
+         <option value="2">2 Stars</option>
+         <option value="3">3 Stars</option>
+         <option value="4">4 Stars</option>
+         <option value="5">5 Stars</option>
+       </select>
+       
+       <label for="review-text">Review:</label>
+       <textarea id="review-text" rows="4" required></textarea>
+       
+       <button type="submit">Submit Review</button>
+     </form>
+   </div>
+ </div>
+</body>
+</html>
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+     const reviewsList = document.getElementById('reviews-list');
+     const reviewForm = document.getElementById('review-form');
+   
+     let reviews = []; // Array to store reviews
+   
+     // Function to display reviews
+     function displayReviews() {
+       reviewsList.innerHTML = '';
+       reviews.forEach(review => {
+         const reviewItem = document.createElement('div');
+         reviewItem.className = 'review-item';
+         
+         const reviewName = document.createElement('div');
+         reviewName.className = 'review-name';
+         reviewName.textContent = review.name;
+   
+         const reviewRating = document.createElement('div');
+         reviewRating.className = 'review-rating';
+         reviewRating.textContent = 'Rating: ' + '⭐'.repeat(review.rating);
+         
+         const reviewText = document.createElement('div');
+         reviewText.className = 'review-text';
+         reviewText.textContent = review.text;
+   
+         reviewItem.appendChild(reviewName);
+         reviewItem.appendChild(reviewRating);
+         reviewItem.appendChild(reviewText);
+   
+         reviewsList.appendChild(reviewItem);
+       });
+     }
+   
+     // Handle form submission
+     reviewForm.addEventListener('submit', function (event) {
+       event.preventDefault();
+   
+       const name = document.getElementById('review-name').value;
+       const rating = parseInt(document.getElementById('review-rating').value, 10);
+       const text = document.getElementById('review-text').value;
+   
+       // Add review to the array
+       reviews.push({ name, rating, text });
+   
+       // Clear the form
+       reviewForm.reset();
+   
+       // Display updated reviews
+       displayReviews();
+     });
+   });
+   
+function submitReview(review) {
+   fetch('/submit-review', {
+     method: 'POST',
+     headers: {
+       'Content-Type': 'application/json'
+     },
+     body: JSON.stringify(review)
+   }).then(response => response.json())
+     .then(data => {
+       console.log('Review submitted:', data);
+     })
+     .catch(error => {
+       console.error('Error:', error);
+     });
+ }
+ 
+ // Update form submission handler to use submitReview function
+ reviewForm.addEventListener('submit', function (event) {
+   event.preventDefault();
+ 
+   const name = document.getElementById('review-name').value;
+   const rating = parseInt(document.getElementById('review-rating').value, 10);
+   const text = document.getElementById('review-text').value;
+ 
+   const review = { name, rating, text };
+ 
+   submitReview(review);
+ 
+   // Clear the form
+   reviewForm.reset();
+ });
+ function loadReviews() {
+   fetch('/get-reviews')
+     .then(response => response.json())
+     .then(data => {
+       reviews = data;
+       displayReviews();
+     })
+     .catch(error => {
+       console.error('Error:', error);
+     });
+ }
+ 
+ // Call loadReviews on page load
+ document.addEventListener('DOMContentLoaded', function () {
+   loadReviews();
+ });
+</script>
+<div class="">
+  <button id="scrollToTopBtn" title="Go to top">▲</button>
+</div>
+<script>
+  let mybutton = document.getElementById("scrollToTopBtn");
+
+
+  window.onscroll = function () { scrollFunction() };
+
+  function scrollFunction() {
+     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+     } else {
+        mybutton.style.display = "none";
+     }
+  }
+  mybutton.onclick = function () {
+     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+<div class="">
+  <button id="scrollToTopBtn" title="Go to top">▲</button>
+</div>
+<script>
+  let mybutton = document.getElementById("scrollToTopBtn");
+
+
+  window.onscroll = function () { scrollFunction() };
+
+  function scrollFunction() {
+     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+     } else {
+        mybutton.style.display = "none";
+     }
+  }
+  mybutton.onclick = function () {
+     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+  
+</body>
+</html>

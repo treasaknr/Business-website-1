@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CART - STRING of PEARLS</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <style>
+      * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         font-family: 'Poppins', sans-serif;
+      }
+
+      #pg-header.blog-header {
+         position: relative;
+         background-image: url("img/caaart.jpg");
+         width: 100%;
+         height: 500px;
+         background-size: cover;
+         display: flex;
+         justify-content: center;
+         text-align: center;
+         flex-direction: column;
+         padding: 14px;
+         color: rgb(253, 254, 254);
+      }
+
+      #pg-header.blog-header h1 {
+         align-items: center;
+         justify-content: center;
+         left: 0;
+         font-size: 60px;
+         font-weight: 500;
+         color: #d69a00fa;
+         z-index: 1000;
+      }
+      #pg-header.blog-header p{
+         align-items: center;
+         justify-content: center;
+         padding: 0 20%;
+         font-size: 14px;
+         font-weight: 500;
+         color: #fffffffa;
+         text-shadow: #101010;
+         background-color: rgba(0, 0, 0, 0.148);
+         z-index: 1000; 
+      }
+      body {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         flex-direction: column;
+         background-color: #00000040;
+
+         min-height: 90%;
+      }
+
+      .header {
+         height: 80px;
+         width: 70%;
+         background-color: rgb(24, 36, 10)9d;
+         border-radius: 3px;
+         margin: 30px 0;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         padding: 15px;
+      }
+
+      .header .logo {
+         font-size: 50px;
+         color: white;
+         background-image: url(img/logo1.png);
+         background-repeat: no-repeat;
+      }
+
+      .cart {
+         margin: top 0;
+         display: flex;
+         background-color: #434242;
+         justify-content: space-between;
+         align-items: center;
+         padding: 7px 10px;
+         border-radius: 3px;
+         width: 50px;
+         border-radius: 20px;
+      }
+
+      .header p {
+         color: #010101;
+         font-weight: 600;
+         font-size: 12px;
+         text-decoration: none;
+         text-shadow: #3333335e;
+         text-decoration: none;
+      }
+
+      .fa-solid {
+         color: rgb(1, 76, 38);
+      }
+
+      .cart p {
+         height: 14px;
+         width: 14px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         border-radius: 50%;
+         background-color: #000000db;
+         color: rgb(243, 243, 243);
+      }
+
+      .container {
+         display: flex;
+         width: 70%;
+         margin-bottom: 30px;
+      }
+
+      #root {
+         width: 60%;
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         grid-gap: 10px;
+      }
+
+      .sidebar {
+         position: fixed;
+         line-height: 1.5pxpx;
+         top: 5px;
+         right: 5px;
+         width: 33%;
+         border-radius: 5px;
+         padding: 0 5px;
+         text-align: center;
+         background-color: rgb(255, 217, 4);
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+         z-index: 1000;
+      }
+
+      .head {
+         background-color: rgb(3, 3, 3);
+         border-radius: 3px;
+         height: 40px;
+         padding: 10px;
+         margin-bottom: 20px;
+         color: rgb(255, 255, 255);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+
+      .foot {
+         display: flex;
+         justify-content: space-between;
+         margin: 20px 0;
+         padding: 10px 0;
+         border-top: 1px solid #ffffff;
+      }
+
+      .box {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: space-between;
+         border: 1px solid rgba(6, 119, 64, 0.4);
+         border-radius: 5px;
+         padding: 5px;
+         background-color: rgb(255, 255, 255);
+      }
+
+      .img-box {
+         width: 100%;
+         height: 180px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+
+      .images {
+         max-width: 90%;
+         max-height: 90%;
+         object-fit: cover;
+         object-position: center;
+         border: 1px solid rgb(12, 127, 69);
+         border-radius: 20px;
+      }
+
+      .bottom {
+         text-align: center;
+         margin-top: 10px;
+      }
+
+      .header p {
+         color: rgb(7, 0, 0);
+         font-size: 20px;
+      }
+
+      .cart-item {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         padding: 10px;
+         background-color: rgba(255, 255, 255, 0.446);
+         border-bottom: 1px solid #2b6800;
+         border-radius: 3px;
+         margin: 5px 0;
+      }
+
+      .row-img {
+         width: 50px;
+         height: 50px;
+         border-radius: 50%;
+         border: 1px solid rgb(12, 127, 69);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+
+      .rowing {
+         max-width: 43px;
+         max-height: 43px;
+         border-radius: 50%;
+      }
+
+      .fa-trash:hover {
+         cursor: pointer;
+         color: #333;
+      }
+
+      button {
+         margin-top: 10px;
+         width: 100%;
+         border: none;
+         font-weight: 600;
+         border-radius: 5px;
+         background-color: rgb(87, 124, 118);
+         padding: 7px 25px;
+         outline: #000000;
+       outline:1px solid  #005600;
+         color:rgb(2, 2, 2);
+         cursor: pointer;
+      }
+
+      button:hover {
+         color: #ffffff;
+         background-color: rgb(7, 107, 49);
+      }
+   </style>
+</head>
+
+<body>
+
+   <section id="pg-header" class="blog-header"> <div class="nav-logo" width="160px" height="100px">
+      <div class="header">
+         <a href="index.html"> <img src="img/logo1.png">Click here
+                  </a>
+      </div>
+      <h1>
+         #CART <br></h1>
+<p>Welcome to the Cart Page of String of Pearls, where your favorite indoor plants await! Here, you can review the selections you've made, adjust quantities, and proceed to checkout with ease. We've designed this page to be as user-friendly as possible, ensuring a smooth and enjoyable shopping experience. Let's bring some greenery into your space!!
+</p>
+   </section>
+  
+      <button class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 cart-icon">
+         🛒 Add to Cart
+      </button>
+   </div>
+   <div class="container">
+      <div id="root"></div>
+      <div class="sidebar" style=" position: fixed;">
+         <div class="head">
+            <p>My Cart</p>
+            <div class="cart">
+               <i class="fa fa-shopping-cart"></i>
+               <p id="count">0</p>
+            </div>
+         </div>
+         <div id="cartItem">Your Cart is Empty.</div>
+         <div class="foot">
+            <h5>Total</h5>
+            <h3 id="total">$0.00</h3>
+         </div>
+         <a href="payment1.html"> <button onclick="window.location.href='payment.html'">Proceed to Checkout</button></a>
+      </div>
+      <script>
+         const product = [
+
+            {
+               id: 0,
+               image: 'IP/1Lp/1.jpg',
+               title: 'ZZ Black Plant',
+               price: 260,
+            },
+            {
+               id: 1,
+               image: 'IP/1Lp/10.jpg',
+               title: 'Snake plant',
+               price: 600,
+            },
+            {
+               id: 2,
+               image: 'IP/1Lp/14.jpg',
+               title: 'Philodendron Micans',
+               price: 340,
+            },
+            {
+               id: 3,
+               image: 'IP/1Lp/19.jpg',
+               title: 'Calathea Sanderiana',
+               price: 369,
+            },
+            {
+               id: 4,
+               image: 'IP/1Lp/25.jpg',
+               title: 'Calathea Freddie',
+               price: 300,
+            },
+            {
+               id: 5,
+               image: 'IP/1Lp/28.jpg',
+               title: 'Cast iron plant',
+               price: 300,
+            },
+            {
+               id: 6,
+               image: 'IP/1Lp/31.jpg',
+               title: 'ZZ Green Plant',
+               price: 269,
+            },
+            {
+               id: 7,
+               image: 'IP/2Ap/36.jpg',
+               title: 'English Ivy',
+               price: 250,
+            },
+            {
+               id: 8,
+               image: 'IP/2Ap/44.jpg',
+               title: 'Spider plant',
+               price: 600,
+            },
+            {
+               id: 9,
+               image: 'IP/2Ap/47.jpg',
+               title: 'Peace Lily',
+               price: 340,
+            },
+            {
+               id: 10,
+               image: 'IP/2Ap/54.jpg',
+               title: 'Boston Fern',
+               price: 369,
+            },
+            {
+               id: 11,
+               image: 'IP/2Ap/60.jpg',
+               title: 'Aloe vera',
+               price: 300,
+            },
+            {
+               id: 12,
+               image: 'IP/2Ap/65.jpg',
+               title: 'Bamboo Palm',
+               price: 300,
+            },
+            {
+               id: 13,
+               image: 'IP/3Fp/66.jpg',
+               title: 'African Violet',
+               price: 280,
+            },
+            {
+               id: 14,
+               image: 'IP/3Fp/73.jpg',
+               title: 'Anthurium',
+               price: 600,
+            },
+            {
+               id: 15,
+               image: 'IP/3Fp/79.png',
+               title: 'Kalanchoe',
+               price: 340,
+            },
+            {
+               id: 16,
+               image: 'IP/3Fp/83.jpg',
+               title: 'Begonia',
+               price: 369,
+            },
+            {
+               id: 17,
+               image: 'IP/3Fp/86.jpg',
+               title: 'Jasmine',
+               price: 300,
+            },
+            {
+               id: 18,
+               image: 'IP/3Fp/91.jpg',
+               title: 'Orchids',
+               price: 300,
+            },
+            {
+               id: 19,
+               image: 'IP/4Sp/96 copy.jpg',
+               title: 'Saguaro Cactus',
+               price: 250,
+            },
+            {
+               id: 20,
+               image: 'IP/4Sp/101.jpg',
+               title: 'Jade Plant',
+               price: 600,
+            },
+            {
+               id: 21,
+               image: 'IP/4Sp/106.jpg',
+               title: 'Christmas Cactus',
+               price: 340,
+            },
+            {
+               id: 22,
+               image: 'IP/4Sp/114.jpg',
+               title: 'Prickly Pear',
+               price: 369,
+            },
+            {
+               id: 23,
+               image: 'IP/4Sp/124.jpg',
+               title: 'Sedum autumn joy',
+               price: 300,
+            },
+            {
+               id: 24,
+               image: 'IP/5Ip/130.jpg',
+               title: 'Parsley',
+               price: 250,
+            },
+            {
+               id: 25,
+               image: 'IP/5Ip/132.jpg',
+               title: 'Basil',
+               price: 600,
+            },
+            {
+               id: 26,
+               image: 'IP/5Ip/140.jpg',
+               title: 'Mint',
+               price: 340,
+            },
+            {
+               id: 27,
+               image: 'IP/5Ip/143.jpg',
+               title: 'Rosemary',
+               price: 369,
+            },
+            {
+               id: 28,
+               image: 'IP/5Ip/147.jpg',
+               title: 'Thyme',
+               price: 300,
+            },
+            {
+               id: 29,
+               image: 'IP/5Ip/153.jpg',
+               title: 'Chives',
+               price: 300,
+            },
+            {
+               id: 30,
+               image: 'IP/6Fop/160.jpg',
+               title: 'Monstera',
+               price: 250,
+            },
+            {
+               id: 31,
+               image: 'IP/6Fop/165.jpg',
+               title: 'Fiddle Leaf Fig',
+               price: 600,
+            },
+            {
+               id: 32,
+               image: 'IP/6Fop/167.jpg',
+               title: 'Rubber Plant',
+               price: 340,
+            },
+            {
+               id: 33,
+               image: 'IP/6Fop/171.jpg',
+               title: 'Chinese Evergreen',
+               price: 369,
+            },
+            {
+               id: 34,
+               image: 'IP/6Fop/179.jpg',
+               title: 'Calathea',
+               price: 300,
+            },
+            {
+               id: 35,
+               image: 'IP/6Fop/183.jpg',
+               title: 'Pothos',
+               price: 300,
+            },
+            {
+               id: 36,
+               image: 'IP/7Cp/193.jpg',
+               title: 'String of Pearls',
+               price: 600,
+            },
+            {
+               id: 37,
+               image: 'IP/7Cp/201.jpg',
+               title: 'Tradescantia',
+               price: 369,
+            },
+            {
+               id: 38,
+               image: 'IP/7Cp/209.jpg',
+               title: 'Golden Pothos',
+               price: 300,
+            },
+            {
+               id: 39,
+               image: 'IP/7Cp/211.png',
+               title: 'Hoya',
+               price: 300,
+            },
+            {
+               id: 40,
+               image: 'IP/8Tp/218.jpg',
+               title: 'Bird of Paradise',
+               price: 250,
+            },
+            {
+               id: 41,
+               image: 'IP/8Tp/236.jpg',
+               title: 'Alocasia',
+               price: 300,
+            },
+            {
+               id: 42,
+               image: 'IP/9Mp/319.jpg',
+               title: 'Mini Orchid',
+               price: 250,
+            },
+            {
+               id: 43,
+               image: 'IP/9Mp/323.jpg',
+               title: 'Mini Pothos',
+               price: 600,
+            },
+            {
+               id: 44,
+               image: 'IP/9Mp/327.jpg',
+               title: 'Haworthia',
+               price: 340,
+            },
+            {
+               id: 45,
+               image: 'IP/9Mp/333.jpg',
+               title: 'Baby Rubber Plant',
+               price: 369,
+            },
+            ,
+            {
+               id: 46,
+               image: 'IP/9Mp/336.jpg',
+               title: 'Mini Aloe Vera',
+               price: 300,
+            },
+            {
+               id: 47,
+               image: 'IP/9Mp/344.jpg',
+               title: 'Mini Calathea',
+               price: 300,
+            },
+
+         ];
+
+         let cart = [];
+         let i = 0;
+
+         const displayProducts = () => {
+            document.getElementById('root').innerHTML = product.map(item => {
+               return `
+               <div class='box'>
+                  <div class='img-box'>
+                     <img class='images' src='${item.image}' />
+                  </div>
+                  <div class='bottom'>
+                     <p>${item.title}</p>
+                     <h4>$${item.price}.00</h4>
+                     <button onclick='addtocart(${i++})'>Add to cart</button>
+                  </div>
+               </div>
+            `;
+            }).join('');
+         };
+
+         const addtocart = (index) => {
+            cart.push(product[index]);
+            displaycart();
+            updateCartCount();
+            updateTotal();
+         };
+
+         const delElement = (index) => {
+            cart.splice(index, 1);
+            displaycart();
+            updateCartCount();
+            updateTotal();
+         };
+
+         const displaycart = () => {
+            if (cart.length === 0) {
+               document.getElementById('cartItem').innerHTML = "Your Cart is Empty.";
+            } else {
+               document.getElementById("cartItem").innerHTML = cart.map((item, index) => {
+                  return `
+               <div class='cart-item'>
+                  <div class='row-img'>
+                     <img class='rowing' src='${item.image}' />
+                  </div>
+                  <p style='font-size:12px;'>${item.title}</p>
+                  <h2 style='font-size:15px;'>$${item.price}.00</h2>
+                  <i class='fa fa-trash' onclick='delElement(${index})'></i>
+               </div>
+               `;
+               }).join('');
+            }
+         };
+
+         const updateCartCount = () => {
+            document.getElementById('count').innerText = cart.length;
+         };
+
+         const updateTotal = () => {
+            let total = cart.reduce((sum, item) => sum + item.price, 0);
+            document.getElementById('total').innerText = `$${total}.00`;
+         };
+
+         displayProducts();
+      </script>
+   </div>
+   <div class="">
+      <button id="scrollToTopBtn" title="Go to top">▲</button>
+   </div>
+   <script>
+      let mybutton = document.getElementById("scrollToTopBtn");
+
+
+      window.onscroll = function () { scrollFunction() };
+
+      function scrollFunction() {
+         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+         } else {
+            mybutton.style.display = "none";
+         }
+      }
+      mybutton.onclick = function () {
+         window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+   </script>
+   <div>
+      <a href="#" class="back-option">
+         BACK TO TOP
+      </a>
+   </div>
+
+   <script>
+      let mybutton = document.getElementById("scrollToTopBtn");
+
+
+      window.onscroll = function () { scrollFunction() };
+
+      function scrollFunction() {
+         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+         } else {
+            mybutton.style.display = "none";
+         }
+      }
+      mybutton.onclick = function () {
+         window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+   </script>
+</body>
+
+</html>

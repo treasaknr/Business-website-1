@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Returns and Orders - String of Pearls</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #3e5a49a2;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #28a745;
+        }
+        
+        h2 {
+            margin-top: 30px;
+            color: #555;
+        }
+        
+        .order-list, .return-form {
+            margin-top: 20px;
+        }
+        
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .order-item:last-child {
+            border-bottom: none;
+        }
+        
+        .order-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .order-details {
+            flex: 1;
+            margin-left: 20px;
+        }
+        
+        .order-actions {
+            text-align: right;
+        }
+        
+        .order-actions button {
+            padding: 10px 15px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .order-actions button:hover {
+            background-color: #c82333;
+        }
+        
+        .return-form label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        
+        .return-form input, .return-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .return-form textarea {
+            width: 100%;
+            padding: 10px;
+            height: 100px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .return-form button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .return-form button:hover {
+            background-color: #218838;
+        }
+        #scrollToTopBtn {
+               display: none;
+               position: fixed;
+               bottom: 5px;
+               right: px;
+               z-index: 99;
+               border: none;
+               outline: none;
+               background-color: #09550f;
+               color: white;
+               cursor: pointer;
+               padding: 15px;
+               border-radius: 20px;
+               font-size: 18px;
+
+          }
+
+          #scrollToTopBtn:hover {
+               background-color: #000000;
+          }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Returns and Orders</h1>
+        
+        <h2>Your Orders</h2>
+        <div class="order-list">
+            <!-- Example Order Item -->
+            <div class="order-item">
+                <img src="IP/2Ap/38.jpg" alt="Plant Name">
+                <div class="order-details">
+                    <p><strong>Plant Name</strong></p>
+                    <p>Order Date: August 20, 2024</p>
+                    <p>Price: $25.00</p>
+                </div>
+                <div class="order-actions">
+                    <button>Return Item</button>
+                </div>
+            </div>
+            <!-- Repeat order-item div for each order -->
+        </div>
+        
+        <h2>Return an Item</h2>
+        <div class="return-form">
+            <form action="submit-return" method="POST">
+                <label for="order-id">Order ID</label>
+                <input type="text" id="order-id" name="order-id" placeholder="Enter your Order ID" required>
+                
+                <label for="product-name">Product Name</label>
+                <input type="text" id="product-name" name="product-name" placeholder="Enter the product name" required>
+                
+                <label for="reason">Reason for Return</label>
+                <select id="reason" name="reason" required>
+                    <option value="" disabled selected>Select a reason</option>
+                    <option value="damaged">Damaged product</option>
+                    <option value="wrong-item">Wrong item received</option>
+                    <option value="not-satisfied">Not satisfied with the product</option>
+                    <option value="other">Other</option>
+                </select>
+                
+                <label for="comments">Additional Comments</label>
+                <textarea id="comments" name="comments" placeholder="Add any additional comments here..."></textarea>
+                
+                <button type="submit">Submit Return Request</button>
+            </form>
+        </div>
+    </div>
+    <div class="">
+        <button id="scrollToTopBtn" title="Go to top">▲</button>
+   </div>
+   <script>
+        let mybutton = document.getElementById("scrollToTopBtn");
+
+
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                  mybutton.style.display = "block";
+             } else {
+                  mybutton.style.display = "none";
+             }
+        }
+        mybutton.onclick = function () {
+             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+   </script>
+</body>
+</html>

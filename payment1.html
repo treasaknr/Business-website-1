@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Payment Page</title>
+   <style>
+      body {
+         background-color: #a89e8a;
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         font-family: 'Poppins', sans-serif;
+
+         background-image: url('IP/7Cp/193.jpg');
+         background-size: cover;
+         background-repeat: no-repeat;
+         background-position: center;
+         min-height: 100vh;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+
+      .payment-container {
+         background-color: rgba(255, 255, 255, 0.312);
+         /* Adds a slight white overlay for readability */
+         padding: 20px;
+         border-radius: 10px;
+         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+         max-width: 400px;
+         width: 100%;
+      }
+
+      h1 {
+         text-align: center;
+         margin-bottom: 20px;
+         color: #333;
+      }
+
+      input[type="text"],
+      input[type="number"] {
+         width: 100%;
+         padding: 10px;
+         margin: 10px 0;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+      }
+
+      button {
+         width: 100%;
+         padding: 10px;
+         border: none;
+         border-radius: 5px;
+         background-color: #28a745;
+         color: white;
+         font-size: 16px;
+         cursor: pointer;
+         margin-top: 10px;
+      }
+
+      button:hover {
+         background-color: #218838;
+      }
+      #scrollToTopBtn {
+               display: none;
+               position: fixed;
+               bottom: 5px;
+               right: px;
+               z-index: 99;
+               border: none;
+               outline: none;
+               background-color: #015d37;
+               color: white;
+               cursor: pointer;
+               padding: 15px;
+               border-radius: 20px;
+               font-size: 18px;
+
+          }
+
+          #scrollToTopBtn:hover {
+               background-color: #212121;
+          }
+
+   </style>
+</head>
+
+<body>
+
+   <div class="payment-container">
+      <a href="review.html" >
+         <p>REVIEWS</p>
+     </a>
+      <h1>Payment <div class="nav-logo" width="160px" height="100px">
+            <a href="index.html"> <img src="img/logo1.png"></a>
+         </div>
+      </h1>
+      <form>
+         <label for="card-number">Card Number</label>
+         <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+
+         <label for="expiry-date">Expiry Date</label>
+         <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+
+         <label for="cvv">CVV</label>
+         <input type="number" id="cvv" name="cvv" placeholder="123" required>
+
+         <button type="submit" onclick="alert('Payment Successful!')">Pay Now</button>
+      </form>
+   </div>
+   <div>
+      <div class="">
+         <button id="scrollToTopBtn" title="Go to top">▲</button>
+      </div>
+      <script>
+         let mybutton = document.getElementById("scrollToTopBtn");
+      
+      
+         window.onscroll = function () { scrollFunction() };
+      
+         function scrollFunction() {
+              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                   mybutton.style.display = "block";
+              } else {
+                   mybutton.style.display = "none";
+              }
+         }
+         mybutton.onclick = function () {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+         }
+      </script>
+   </div>
+</body>
+
+</html>

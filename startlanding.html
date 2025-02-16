@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>String of Pearls - Landing Page</title>
+   <link rel="stylesheet" href="styles.css">
+   <style>
+      body,
+      html {
+         margin: 0;
+         padding: 0;
+         width: 100%;
+         height: 100%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         font-family: Poppins,sans-serif;
+         
+         background-color: #f0f0f0;
+      }
+
+      .logo-container {line-height: 12px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         cursor: pointer;
+      }
+      .logo-container p{
+         padding-left: 35px;;
+      }
+      .logo-container h1{
+         padding-left: 2px;
+      }
+      .logo {margin-left:-2px;
+         width: 100px;
+         height:100px;
+         height: auto;
+         animation: fadeIn 2s;
+      }
+
+      .login-form-container {
+         display: none;
+         flex-direction: column;
+         align-items: center;
+         background: rgb(35, 62, 37);
+         color:white;
+         padding: 2rem;
+         border-radius: 8px;
+         box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .hidden {
+         display: none;
+      }
+
+      .login-form-container h2 {
+         margin-bottom: 1rem;
+      }
+
+      .login-form-container input {
+         margin-bottom: 1rem;
+         padding: 0.5rem;
+         width: 100%;
+         border: 1px solid #ccc;
+         border-radius: 4px;
+      }
+
+      .login-form-container button {
+         padding: 0.5rem 1rem;
+         border: none;
+         border-radius: 4px;
+         background-color: #5f605f;
+         color: white;
+         cursor: pointer;
+      }
+
+      .login-form-container button:hover {
+         background-color: #4cae4c;
+      }
+
+      @keyframes fadeIn {
+         from {
+            opacity: 0;
+         }
+
+         to {
+            opacity: 1;
+         }
+      }
+
+      @keyframes fadeInForm {
+         from {
+            opacity: 0;
+            transform: translateY(-20px);
+         }
+
+         to {
+            opacity: 1;
+            transform: translateY(0);
+         }
+      }
+   </style>
+</head>
+
+<body>
+   <div class="logo-container" style="font-size:18px">
+      <img src="img/logo1.png" alt="String of Pearls Logo" class="logo">
+      <strong><h1>"STRING OF PEARLS:</h1><br>
+      <p style="font-size:12px">Your Ultimate Destination for Indoor Greenery."</p></strong>
+     
+   </div>
+
+   <div class="login-form-container hidden">
+      <form id="loginForm" action="index.html">
+         <h2>Login</h2>
+         <input type="text" placeholder="User ID" required>
+         <input type="password" placeholder="Password" required>
+         <button type="submit">Login</button>
+      </form>
+   </div>
+
+   <script>document.querySelector('.logo-container').addEventListener('click', function () {
+         this.classList.add('hidden');
+         const loginFormContainer = document.querySelector('.login-form-container');
+         loginFormContainer.style.display = 'flex';
+         loginFormContainer.classList.add('fade-in');
+      });
+
+      document.getElementById('loginForm').addEventListener('submit', function (e) {
+         e.preventDefault();
+         
+         setTimeout(() => {
+            window.location.href = this.action;
+         }, 1000); 
+      });
+   </script>
+</body>
+
+</html>

@@ -1,0 +1,545 @@
+=
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="styles.css">
+   <script src="apps.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <title> String of Pearls-The complete storehouse of Indoorplants </title>
+   <style>
+      #pg-header.blog-header {
+         background-image: url("img/ferns.jpg");
+         width: 100%;
+         height: 500px;
+         background-size: cover;
+         display: flex;
+         justify-content: center;
+         text-align: center;
+         flex-direction: column;
+         padding: 14px;
+         color: rgba(240, 248, 255, 0.402);
+      }
+
+      #blog {
+         padding: 150px 150px 0 150px;
+      }
+
+      #blog .blog-box {
+         display: flex;
+         align-items: center;
+         width: 100%;
+         position: relative;
+         padding-bottom: 90px;
+      }
+
+      #blog .blog-img {
+         width: 50%;
+         margin-right: 40px;
+         border-radius: 15px;
+      }
+
+      #blog img {
+         width: 100%;
+         height: 250px;
+         object-fit: cover;
+         border-radius: 15px;
+         border: 1px solid #034f00;
+      }
+
+      #blog .blog-details {
+         width: 50%;
+      }
+
+      #blog .blog-details a {
+         text-decoration: none;
+         font-size: 11px;
+         color: #000000;
+         font-weight: 700px;
+         position: relative;
+         transition: 0.3s;
+      }
+
+      #blog .blog-details p {
+         font-size: 14px;
+         line-height: 20px;
+      }
+
+      #blog .blog-details a::after {
+         content: "";
+         width: 50px;
+         height: 1px;
+         background-color: #000000;
+         position: absolute;
+         top: 4px;
+         right: -55px
+      }
+
+      #blog .blog-details a:hover {
+         color: #046b00;
+      }
+
+      #blog .blog-details a:hover::after {
+         background-color: #034f00;
+      }
+
+      #pg-header h2 {
+         font-size: 200px;
+         font-weight: 800;
+         color: #105b4e;
+      }
+
+      #blog .blog-box h1 {
+         position: absolute;
+         top: -65px;
+         left: 0;
+         font-size: 70px;
+         font-weight: 500;
+         color: #5d5c5cfa;
+         z-index: -9;
+      }
+
+      #scrollToTopBtn {
+         display: none;
+         position: fixed;
+         bottom: 5px;
+         right: px;
+         z-index: 99;
+         border: none;
+         outline: none;
+         background-color: #016201;
+         color: white;
+         cursor: pointer;
+         padding: 15px;
+         border-radius: 20px;
+         font-size: 18px;
+
+      }
+
+      #scrollToTopBtn:hover {
+         background-color: #030303;
+      }
+      @media (max-width: 768px) {
+    #pg-header.blog-header {
+        height: 300px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    #pg-header h2 {
+        font-size: 80px;
+    }
+
+    #blog {
+        padding: 20px;
+    }
+
+    #blog .blog-box {
+        flex-direction: column;
+        padding-bottom: 30px;
+    }
+
+    #blog .blog-img {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    #blog img {
+        height: 200px;
+    }
+
+    #blog .blog-details {
+        width: 100%;
+    }
+
+    #blog .blog-details h1 {
+        font-size: 30px;
+        top: -25px;
+    }
+
+    #blog .blog-details a::after {
+        display: none;
+    }
+
+    #pg-header h1 {
+        font-size: 40px;
+    }
+
+    .nav-left, .nav-center, .nav-right {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav-logo img {
+        width: 120px;
+        height: auto;
+    }
+
+    .location, .language-option, .account-option, .order-option, .cart-option {
+        display: none;
+    }
+
+    .nav-center {
+        margin: 10px 0;
+    }
+
+    .nav-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-options .options {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .nav-options .options a {
+        margin-bottom: 10px;
+    }
+
+    .footer-links ul {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .country-info, .policies {
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .country-info .logo img {
+        width: 100px;
+    }
+
+    .policies .pages {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    #scrollToTopBtn {
+        bottom: 15px;
+        right: 15px;
+    }
+}
+   </style>
+</head>
+
+<body>
+
+   <header>
+      <nav>
+         <div class="nav-left">
+            <div class="nav-logo" width="160px" height="100px">
+           <a href="index.html">  <img src="img/logo1.png"></a>  
+            </div>
+            <div class="location">
+               <p class="top-text">Deliver to</p>
+               <div class="location-icon">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <p class="bottom-text">India</p>
+               </div>
+            </div>
+         </div>
+
+         <div class="nav-center">
+            <select class="search-dropdown">
+               <option>All</option>
+               <option>Low light plants</option>
+               <option>Flowering plants</option>
+               <option>Sacculants and cacti</option>
+               <option>Herbs</option>
+               <option>Foliage plants</option>
+               <option>Climbing and tailoring plants</option>
+               <option>Tropical plants</option>
+               <option>Cacti</option>
+               <option>Miniature plants</option>
+            </select>
+            <input type="text" placeholder="Search products from String of Pearls" class="search-box">
+            <div class="search-icon">
+               <i class="fa-solid fa-magnifying-glass" style="color: #28416c;">
+               </i>
+            </div>
+         </div>
+
+         <div class="nav-right">
+            <div class="language-option">
+               <div class="flag">
+                  <i class="fa-solid fa-flag-checkered"></i>
+               </div>
+               <select class="select-language">
+                  <option value="lan">EN</option>
+                  <option value="lan">ES</option>
+                  <option value="lan">AR</option>
+               </select>
+            </div>
+
+            <div class="account-option">
+               <p class="top-text">
+                  Hello, sign in
+               </p>
+               <select class="select-account">
+                  <option value="Account">
+                     Account & Lists
+                  </option>
+                
+               </select>
+            </div>
+
+            <div class="order-option">
+               <p class="top-text">
+                  Returns
+               </p>
+               <p class="bottom-text">
+                  & Orders
+               </p>
+            </div>
+
+            <div class="cart-option">
+               <div class="cart-logo">
+                  <i class="fa-solid fa-cart-shopping"></i>
+               </div>
+               Cart
+            </div>
+         </div>
+      </nav>
+
+      <div class="nav-options">
+         <div class="all-logo">
+            <i class="fa-solid fa-bars"></i>
+            <p class="list">All</p>
+         </div>
+         <div class="options">
+            <a href="Aboutus.html">
+               <p>ABOUT US</p>
+            </a>
+            <a href="index.html">
+               <p>PRODUCT</p>
+            </a>
+            <a href="cart.html">
+               <p>CART</p>
+            </a>
+           
+            <a class="active" href="blog.html">
+               <p>BLOG</p>
+            </a>
+         </div>
+      </div>
+   </header>
+   <section id="header">
+   </section>
+   <section id="pg-header" class="blog-header">
+      <h1>
+         #BLOG-String of Pearls.
+      </h1>
+      <p>Read about out products!</p>
+   </section>
+   <section id="blog">
+      <div class="blog-box">
+         <div class="blog-img">
+            <img src="img/BnrPro1.jpg" width="400px" height="350px" alt="">
+         </div>
+         <div class="blog-details">
+            <h4>The Benefits of Having Indoor Plants in Your Home!</h4>
+            <p>
+               Bringing indoor plants into your home offers more than just aesthetic appeal. These green companions
+               improve air quality by filtering out toxins and releasing oxygen, making your living space healthier.
+               Studies show that being around plants can reduce stress, lower blood pressure, and even boost your mood
+               and productivity. Whether you're working from home or simply unwinding after a long day, the presence of
+               plants can create a calming atmosphere, promoting a sense of well-being. Additionally, caring for plants
+               can be a therapeutic activity, offering a rewarding sense of accomplishment as you nurture them to
+               thrive. </p>
+            <a href="#">CONTINUE READING</a>
+            <h1>13/01</h1>
+         </div>
+      </div>
+      <div class="blog-box">
+         <div class="blog-img">
+            <img src="img/barrel-cactus-.jpg" width="400px" height="350px" alt="">
+         </div>
+         <div class="blog-details">
+            <h4>Common Indoor Plant Problems and How to Fix Them!</h4>
+            <p>
+               Even the most experienced plant enthusiasts encounter issues with their indoor greenery. Common problems
+               like yellowing leaves, root rot, and pest infestations can be frustrating, but they are usually easy to
+               fix with the right approach. Yellow leaves often indicate overwatering or insufficient light, while root
+               rot typically results from poor drainage. Pests like spider mites and aphids can be controlled with
+               natural remedies such as neem oil or insecticidal soap. Understanding these common issues and how to
+               address them can help you keep your indoor plants healthy and thriving, ensuring they remain a beautiful
+               part of your home. </p>
+            <a href="#">CONTINUE READING</a>
+            <h1>13/01</h1>
+         </div>
+      </div>
+      <div class="blog-box">
+         <div class="blog-img">
+            <img src="img/fli1.jpg" width="400px" height="350px" alt="">
+         </div>
+         <div class="blog-details">
+            <h4>Air-Purifying Plants That Improve Your Indoor Air Quality!</h4>
+            <p>
+               Indoor air pollution is a growing concern, but nature has provided a simple solution—air-purifying
+               plants. Certain indoor plants, such as the Spider Plant, Peace Lily, and Boston Fern, are known for their
+               ability to filter out harmful chemicals like formaldehyde, benzene, and trichloroethylene from the air.
+               These plants also increase humidity levels by releasing moisture, which can help alleviate respiratory
+               issues and dry skin. Incorporating air-purifying plants into your home not only enhances your decor but
+               also creates a healthier living environment by providing cleaner, fresher air. </p>
+            <a href="#">CONTINUE READING</a>
+            <h1>13/01</h1>
+         </div>
+      </div>
+      <div class="blog-box">
+         <div class="blog-img">
+            <img src="img/flowers.jpg" width="400px" height="350px" alt="">
+         </div>
+         <div class="blog-details">
+            <h4>Decorating with Indoor Plants: A Room-by-Room Guide!</h4>
+            <p>
+               Indoor plants can transform any room in your home into a vibrant, inviting space. In the living room,
+               large statement plants like the Monstera or Fiddle Leaf Fig can create a focal point, while smaller
+               plants like succulents or ferns can add greenery to shelves and coffee tables. For the bedroom, consider
+               calming plants like Lavender or Aloe Vera, which promote relaxation and better sleep. In the kitchen,
+               herbs like Basil and Mint are not only practical but also add a fresh, aromatic touch. This room-by-room
+               guide helps you choose the best plants to complement each space, enhancing both functionality and style.
+            </p>
+            <a href="#">CONTINUE READING</a>
+            <h1>13/01</h1>
+         </div>
+      </div>
+      <div class="blog-box">
+         <div class="blog-img">
+            <img src="img/il_570xN.2554089972_gxey.webp" width="400px" height="350px" alt="">
+         </div>
+         <div class="blog-details">
+            <h4>Top 10 Low-Light Indoor Plants for Beginners!</h4>
+            <p>
+               Starting an indoor plant collection can be intimidating, especially if you’re worried about not having
+               enough sunlight. Fortunately, there are plenty of low-light plants that are not only easy to care for but
+               also incredibly resilient. Plants like the Snake Plant, ZZ Plant, and Pothos thrive in low-light
+               conditions and require minimal watering, making them perfect for beginners. These plants can survive in
+               the dim corners of your home, adding a touch of greenery without demanding much attention. With these
+               hardy plants, even those with the busiest schedules can enjoy the benefits of indoor gardening.. </p>
+            <a href="#">CONTINUE READING</a>
+            <h1>13/01</h1>
+         </div>
+      </div>
+   </section>
+
+
+
+
+
+
+
+   <footer>
+      <a href="#" class="back-option">
+         BACK TO TOP
+      </a>
+
+      <div class="footer-links">
+
+         <ul>
+            <p>Get to Know Us</p>
+            <a>Careers</a>
+            <a>Blog</a>
+            <a>About String of Pearls</a>
+            <a>Investor Relations</a>
+            <a>String of Pearls Devices</a>
+            <a>String of Pearls Science</a>
+         </ul>
+         <ul>
+            <p>Make Money with Us</p>
+            <a>Sell products on String of Pearls</a>
+            <a>Sell on String of Pearls Business</a>
+            <a>Sell apps on String of Pearls</a>
+            <a>Become an Affiliate</a>
+            <a>Self-Publish with Us</a>
+            <a>Host an String of Pearls Hub</a>
+            <a>See More Make Money with Us</a>
+         </ul>
+         <ul>
+            <p>String of Pearls Payment Products</p>
+            <a>String of Pearls Business Card</a>
+            <a>Shop with Points</a>
+            <a>Reload Your Balance</a>
+            <a>String of Pearls Currency Converter</a>
+         </ul>
+         <ul>
+            <p>Let Us Help You</p>
+            <a>String of Pearls and COVID-19</a>
+            <a>Your Account</a>
+            <a>Your Orders</a>
+            <a>Shipping Rates & Policies</a>
+            <a>Returns & Replacements</a>
+            <a>Manage Your Content and Devices</a>
+            <a>String of Pearls Assistant</a>
+            <a>Help</a>
+         </ul>
+      </div>
+      <div class="country-info"><a href="index.html">
+         <div><img src="img/logo1.png"></div>
+         <div class="logo">
+            <div width="150px" height="70px">
+               <img src="img/logo2.png" style="width: 150;"></a>
+            </div>
+         </div>
+         <div class="options">
+            <select>
+               <option value="En">
+                  English
+               </option>
+            </select>
+            <select>
+               <option value="1">
+                  $ USD - U.S. Dollar
+               </option>
+            </select>
+
+            <select>
+               <option value="4">
+                  United states
+               </option>
+            </select>
+         </div>
+      </div>
+      <div class="policies">
+         <div class="pages">
+            <a href="#">Conditions of Use</a>
+            <a href="#">Privacy Notice</a>
+            <a href="#">Your Ads Privacy Choices</a>
+         </div>
+         © 1996-2023,String of Pearls-The complete storehouse of Indoorplants,String of Pearls.com, Inc. or its
+         affiliates
+      </div>
+   </footer>
+   <div class="">
+      <button id="scrollToTopBtn" title="Go to top">▲</button>
+   </div>
+   <script>
+      let mybutton = document.getElementById("scrollToTopBtn");
+
+      window.onscroll = function () { scrollFunction() };
+
+      function scrollFunction() {
+         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+         } else {
+            mybutton.style.display = "none";
+         }
+      }
+      mybutton.onclick = function () {
+         window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+   </script>
+</body>
+
+</html>
