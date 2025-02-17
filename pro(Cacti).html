@@ -27,78 +27,81 @@
          color: #FFD700;
          font-size: 1rem;
       }
+
       body,
-        html {
-            height: 100%;
-            margin: 0;
-            font-family: Poppins, sans-serif;
-        }
+      html {
+         height: 100%;
+         margin: 0;
+         font-family: Poppins, sans-serif;
+      }
 
-        .hero-image {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/cacti-.jpg");
-            height: 50%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
-        }
+      .hero-image {
+         background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/cacti-.jpg");
+         height: 50%;
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: cover;
+         position: relative;
+      }
 
-        .hero-text {
-            text-align: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-        }
+      .hero-text {
+         text-align: center;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         color: white;
+      }
 
-        .hero-text button {
-            border: 1px solid green;
-            border-radius: 30px;
-            outline: 0;
-            display: inline-block;
-            padding: 10px 25px;
-            color: black;
-            background-color: #59906273;
-            text-align: center;
-            cursor: pointer;
-        }
+      .hero-text button {
+         border: 1px solid green;
+         border-radius: 30px;
+         outline: 0;
+         display: inline-block;
+         padding: 10px 25px;
+         color: black;
+         background-color: #59906273;
+         text-align: center;
+         cursor: pointer;
+      }
 
-        .hero-text button:hover {
-            background-color: #fffefe1e;
-            color: white;
-        }
-        #scrollToTopBtn {
-               display: none;
-               position: fixed;
-               bottom: 5px;
-               right: px;
-               z-index: 99;
-               border: none;
-               outline: none;
-               background-color: #ffcc00;
-               color: white;
-               cursor: pointer;
-               padding: 15px;
-               border-radius: 20px;
-               font-size: 18px;
+      .hero-text button:hover {
+         background-color: #fffefe1e;
+         color: white;
+      }
 
-          }
+      #scrollToTopBtn {
+         display: none;
+         position: fixed;
+         bottom: 5px;
+         right: px;
+         z-index: 99;
+         border: none;
+         outline: none;
+         background-color: #ffcc00;
+         color: white;
+         cursor: pointer;
+         padding: 15px;
+         border-radius: 20px;
+         font-size: 18px;
 
-          #scrollToTopBtn:hover {
-               background-color: #e6b800;
-          }
+      }
 
+      #scrollToTopBtn:hover {
+         background-color: #e6b800;
+      }
    </style>
 </head>
 <div class="hero-image">
    <div class="hero-text">
-       <h1 style="font-size:50px">CACTI</h1>
-       <p> Cacti are unique indoor plants known for their striking shapes and low maintenance needs. Adapted to store
+      <h1 style="font-size:50px">CACTI</h1>
+      <p> Cacti are unique indoor plants known for their striking shapes and low maintenance needs. Adapted to store
          water in their thick stems, they thrive with minimal watering.</p>
-       <button> <div class="nav-logo" width="160px" height="100px">
-         <a href="index.html"> <img src="img/logo1.png"></a>
-     </div></button>
+      <button>
+         <div class="nav-logo" width="160px" height="100px">
+            <a href="index.html"> <img src="img/logo1.png"></a>
+         </div>
+      </button>
    </div>
 </div>
 
@@ -171,8 +174,7 @@
          <div id="plantGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Plant Card 1 -->
             <div class="bg-white p-6 rounded-lg shadow-lg plant-card" data-price="0" data-rating="5">
-               <img src="C:\Users\user\Desktop\test stringofpearls\img\Saguaro Cac.jpg" alt="Saguaro Cactus"
-                  class="w-full h-40 object-cover mb-4 rounded">
+               <img src="img/Saguaro Cac.jpg" alt="Saguaro Cactus" class="w-full h-40 object-cover mb-4 rounded">
                <h2 class="text-xl font-semibold mb-2">Saguaro Cactus</h2>
                <p class="text-gray-600 mb-4">This remarkable ability not only fuels their own growth but also acts
                   as the primary source of sustenance for...</p>
@@ -181,14 +183,13 @@
                </div>
                <div class="flex justify-between items-center">
                   <span class="text-lg font-bold">$250.00</span>
-                
+
                </div>
             </div>
 
             <!-- Plant Card 2 -->
             <div class="bg-white p-6 rounded-lg shadow-lg plant-card" data-price="575" data-rating="5">
-               <img src="C:\Users\user\Desktop\test stringofpearls\img\Barrel Cactus.jpg" alt="Barrel Cactus"
-                  class="w-full h-40 object-cover mb-4 rounded">
+               <img src="img\Barrel Cactus.jpg" alt="Barrel Cactus" class="w-full h-40 object-cover mb-4 rounded">
                <h2 class="text-xl font-semibold mb-2">Barrel Cactus</h2>
                <p class="text-gray-600 mb-4">This remarkable ability not only fuels their own growth but also acts
                   as the primary source of sustenance for...</p>
@@ -197,31 +198,32 @@
                </div>
                <div class="flex justify-between items-center">
                   <span class="text-lg font-bold"><del>$600.00</del> $575.00</span>
-                
+
                </div>
             </div>
 
             <!-- Plant Card 3 -->
             <div class="bg-white p-6 rounded-lg shadow-lg plant-card" data-price="267" data-rating="4">
-               <img src="C:\Users\user\Desktop\test stringofpearls\img\prickly-pear.jpg" alt="Prickly Pear"
-                  class="w-full h-40 object-cover mb-4 rounded">
+               <img src="img\prickly-pear.jpg" alt="Prickly Pear" class="w-full h-40 object-cover mb-4 rounded">
                <h2 class="text-xl font-semibold mb-2">Prickly Pear</h2>
-               <p class="text-gray-600 mb-4">A striking cactus with flat, oval pads covered in spines, known for its vibrant blooms and edible fruit, thriving in bright light and well-drained soil.</p>
+               <p class="text-gray-600 mb-4">A striking cactus with flat, oval pads covered in spines, known for its
+                  vibrant blooms and edible fruit, thriving in bright light and well-drained soil.</p>
                <div class="star-rating mb-2">
                   ★★★★☆
                </div>
                <div class="flex justify-between items-center">
                   <span class="text-lg font-bold"><del>$340.00</del> $267.00</span>
-                 
+
                </div>
             </div>
 
             <!-- Plant Card 4 -->
             <div class="bg-white p-6 rounded-lg shadow-lg plant-card" data-price="369" data-rating="3">
-               <img src="C:\Users\user\Desktop\test stringofpearls\img\Echinopsis_oxygona_.jpg" alt=" Echinopsis"
+               <img src="img\Echinopsis_oxygona_.jpg" alt=" Echinopsis"
                   class="w-full h-40 object-cover mb-4 rounded">
                <h2 class="text-xl font-semibold mb-2"> Echinopsis</h2>
-               <p class="text-gray-600 mb-4">A captivating cactus with round, ribbed stems that produce stunning, large blooms in various colors, thriving in bright light and requiring minimal care.
+               <p class="text-gray-600 mb-4">A captivating cactus with round, ribbed stems that produce stunning, large
+                  blooms in various colors, thriving in bright light and requiring minimal care.
 
                </p>
                <div class="star-rating mb-2">
@@ -229,16 +231,18 @@
                </div>
                <div class="flex justify-between items-center">
                   <span class="text-lg font-bold">$369.00</span>
-                 
+
                </div>
             </div>
 
             <!-- Plant Card 5 -->
             <div class="bg-white p-6 rounded-lg shadow-lg plant-card" data-price="285" data-rating="4">
-               <img src="C:\Users\user\Desktop\test stringofpearls\img\Bunny Ear Cactus.jpg" alt="Bunny Ear Cactus"
+               <img src="img\Bunny Ear Cactus.jpg" alt="Bunny Ear Cactus"
                   class="w-full h-40 object-cover mb-4 rounded">
                <h2 class="text-xl font-semibold mb-2">Bunny Ear Cactus</h2>
-               <p class="text-gray-600 mb-4">A charming cactus with flat, round pads resembling bunny ears, covered in tiny spines, adding a whimsical touch to your space while thriving in bright light and well-drained soil.
+               <p class="text-gray-600 mb-4">A charming cactus with flat, round pads resembling bunny ears, covered in
+                  tiny spines, adding a whimsical touch to your space while thriving in bright light and well-drained
+                  soil.
 
                </p>
                <div class="star-rating mb-2">
@@ -246,7 +250,7 @@
                </div>
                <div class="flex justify-between items-center">
                   <span class="text-lg font-bold"><del>$300.00</del> $285.00</span>
-                
+
                </div>
             </div>
 
@@ -294,26 +298,26 @@
       // Initialize sorting on page load
       updateFilters();
    </script>
-<div class="">
-   <button id="scrollToTopBtn" title="Go to top">▲</button>
-</div>
-<script>
-   let mybutton = document.getElementById("scrollToTopBtn");
+   <div class="">
+      <button id="scrollToTopBtn" title="Go to top">▲</button>
+   </div>
+   <script>
+      let mybutton = document.getElementById("scrollToTopBtn");
 
 
-   window.onscroll = function () { scrollFunction() };
+      window.onscroll = function () { scrollFunction() };
 
-   function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-         mybutton.style.display = "block";
-      } else {
-         mybutton.style.display = "none";
+      function scrollFunction() {
+         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+         } else {
+            mybutton.style.display = "none";
+         }
       }
-   }
-   mybutton.onclick = function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-   }
-</script>
+      mybutton.onclick = function () {
+         window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+   </script>
 </body>
 
 </html>
