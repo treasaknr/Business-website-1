@@ -69,27 +69,27 @@
             background-color: #fffefe1e;
             color: white;
         }
+
         #scrollToTopBtn {
-               display: none;
-               position: fixed;
-               bottom: 5px;
-               right: px;
-               z-index: 99;
-               border: none;
-               outline: none;
-               background-color: #ffcc00;
-               color: white;
-               cursor: pointer;
-               padding: 15px;
-               border-radius: 20px;
-               font-size: 18px;
+            display: none;
+            position: fixed;
+            bottom: 5px;
+            right: px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #ffcc00;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 20px;
+            font-size: 18px;
 
-          }
+        }
 
-          #scrollToTopBtn:hover {
-               background-color: #e6b800;
-          }
-
+        #scrollToTopBtn:hover {
+            background-color: #e6b800;
+        }
     </style>
 </head>
 
@@ -100,9 +100,11 @@
         <h1 style="font-size:50px">LOW-LIGHT INDOOR PLANTS</h1>
         <p>Low-light indoor plants are perfect for spaces with minimal natural sunlight, thriving in shaded corners
             or rooms with indirect light.</p>
-        <button> <div class="nav-logo" width="160px" height="100px">
-            <a href="index.html"> <img src="img/logo1.png"></a>
-        </div></button>
+        <button>
+            <div class="nav-logo" width="160px" height="100px">
+                <a href="index.html"> <img src="img/logo1.png"></a>
+            </div>
+        </button>
     </div>
 </div>
 
@@ -188,7 +190,7 @@
                     </div>
                     <div class="flex justify-between items-center">
                         <span class="text-lg font-bold">$260.00</span>
-                      
+
                     </div>
                 </div>
 
@@ -204,7 +206,7 @@
                     </div>
                     <div class="flex justify-between items-center">
                         <span class="text-lg font-bold"><del>$600.00</del> $575.00</span>
-                       
+
                     </div>
                 </div>
 
@@ -220,14 +222,14 @@
                     </div>
                     <div class="flex justify-between items-center">
                         <span class="text-lg font-bold"><del>$340.00</del> $267.00</span>
-                       
+
                     </div>
                 </div>
 
                 <!-- Plant Card 4 -->
                 <div class="bg-white p-6 rounded-lg shadow-lg plant-card" data-price="369" data-rating="3">
-                    <img src="C:\Users\user\Desktop\test stringofpearls\img\Calathea Sanderiana.jpg"
-                        alt="Calathea Sanderiana" class="w-full h-40 object-cover mb-4 rounded">
+                    <img src="img\Calathea Sanderiana.jpg" alt="Calathea Sanderiana"
+                        class="w-full h-40 object-cover mb-4 rounded">
                     <h2 class="text-xl font-semibold mb-2">Calathea Sanderiana</h2>
                     <p class="text-gray-600 mb-4">A striking plant with large, patterned leaves featuring rich green and
                         purple hues, known for its eye-catching beauty and preference for indirect light and humidity.
@@ -237,7 +239,7 @@
                     </div>
                     <div class="flex justify-between items-center">
                         <span class="text-lg font-bold">$369.00</span>
-                       
+
                     </div>
                 </div>
 
@@ -252,7 +254,7 @@
                     </div>
                     <div class="flex justify-between items-center">
                         <span class="text-lg font-bold"><del>$300.00</del> $285.00</span>
-                       
+
                     </div>
                 </div>
 
@@ -268,7 +270,7 @@
                     </div>
                     <div class="flex justify-between items-center">
                         <span class="text-lg font-bold"><del>$300.00</del> $285.00</span>
-                        
+
                     </div>
                 </div>
                 <!-- Plant Card 7 -->
@@ -284,7 +286,7 @@
                     </div>
                     <div class="flex justify-between items-center">
                         <span class="text-lg font-bold">$269.00</span>
-                        
+
                     </div>
                 </div>
             </div>
@@ -330,26 +332,26 @@
         // Initialize sorting on page load
         updateFilters();
     </script>
-<div class="">
-    <button id="scrollToTopBtn" title="Go to top">▲</button>
-</div>
- <script>
-    let mybutton = document.getElementById("scrollToTopBtn");
+    <div class="">
+        <button id="scrollToTopBtn" title="Go to top">▲</button>
+    </div>
+    <script>
+        let mybutton = document.getElementById("scrollToTopBtn");
 
 
-    window.onscroll = function () { scrollFunction() };
+        window.onscroll = function () { scrollFunction() };
 
-    function scrollFunction() {
-       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          mybutton.style.display = "block";
-       } else {
-          mybutton.style.display = "none";
-       }
-    }
-    mybutton.onclick = function () {
-       window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
- </script>
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+        mybutton.onclick = function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 
 </html>
